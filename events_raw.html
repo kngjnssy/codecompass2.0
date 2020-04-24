@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CODE.compass</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+  </head>
+  <body>
+      <a class="btn btn-empty" href="index.html"> go back </a>
+    <p>This page is to test OAuth 2 // signing in with your own account to display upcoming calendar events</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" class="btn btn-full">Click here to allow me to display you your events</button>
+    <button id="signout_button" class="btn btn-empty">Sign Out (your list of events will still be displayed until you refresh)</button>
+
+    <div class="main-container-raw"></div>
+    <div class="community-container-raw"></div>
+    <div class="calendar-container-raw"></div>
+
+
+    <script src="script_main.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+
+
+  </body>
+</html>
