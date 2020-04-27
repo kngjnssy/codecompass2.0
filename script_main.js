@@ -275,8 +275,8 @@ function formatEvents() {
               }
         
               else {
-                room = 'CAMPUS'
-                room_info = 'somewhere on'
+                room = 'location'
+                room_info = 'room/'
               }
         
               var event_name = event.summary;
@@ -292,7 +292,7 @@ function formatEvents() {
                 event_type = "INFO SESSION"
               } 
               else {
-                event_type ="COMMUNITY EVENT"
+                event_type ="*category* & _tags_"
               }
               // ['a', 'b', 'c'].includes('b')
         
