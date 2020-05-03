@@ -28,7 +28,8 @@ gapi.client.init({
     authorizeButton.onclick = handleAuthClick;
     signoutButton.onclick = handleSignoutClick;
 }, function(error) {
-    appendPre(JSON.stringify(error, null, 2));
+    console.error(error);
+    // appendPre(JSON.stringify(error, null, 2));
 });
 }
 
