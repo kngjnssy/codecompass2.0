@@ -1,3 +1,4 @@
+
 // TODO hide api key 
 var CLIENT_ID = '183857612019-7hr46cble04h91pvglmgecfdpssckm41.apps.googleusercontent.com';
 var API_KEY = 'AIzaSyD2Cb8n5HRPmm6TCrxKcyyvMuGpJBZ7Omw';
@@ -11,6 +12,7 @@ var signoutButton = document.getElementById('signout_button');
 function handleClientLoad() {
 gapi.load('client:auth2', initClient);
 }
+
 
 // Initializes the API client library and sets up sign-in state listeners.
 function initClient() {
@@ -42,6 +44,7 @@ if (isSignedIn) {
     listUpcomingEvents();
     formatEvents();
     eventsToFloorplan();
+    showNavi();
 } else {
     authorizeButton.style.display = 'block';
     signoutButton.style.display = 'none';
@@ -56,6 +59,16 @@ gapi.auth2.getAuthInstance().signIn();
 // Sign out the user upon button click.
 function handleSignoutClick(event) {
 gapi.auth2.getAuthInstance().signOut();
+}
+
+// --------------------- internal navigation --------------------- //
+
+function showNavi() {
+  var content = document.querySelector(".nav-calendar")
+  content.innerHTML += '<a class="btn btn-full" href="events_raw.html">let\'s check the calendar!</a><br>'
+  content.innerHTML += '<a class="btn btn-empty " href="events.html">Show me more</a>'
+
+
 }
 
 // --------------------- DISPLAY CALENDARS --------------------- //

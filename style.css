@@ -17,6 +17,10 @@ body {
     text-rendering: optimizeLegibility;
 
 }
+button {
+    border: none;
+    background-color: transparent;
+}
 
 .btn {
     display: inline-block;
@@ -36,6 +40,18 @@ body {
     /* border-radius: 3px solid chartreuse; */
     color: chartreuse;
 
+}
+.btn-no-border {
+    border: none;
+    background-color: transparent;
+}
+
+.btn-no-border-green {
+    color: greenyellow;
+}
+
+.btn-no-border-pale {
+    color: rgba(172, 255, 47, 0.404);
 }
 
 .plan {

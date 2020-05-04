@@ -12,10 +12,15 @@
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="200" height="200" viewBox="200 200 200 200" xml:space="preserve">
             <path id="logo" fill="#FFFFFF" d="M280.24 351.98l-52.69-49.5 52.7-49.83 18.38 17.19-35.88 32.64 35.88 32.31zM322.35 351.98l52.7-49.5-52.7-49.83-18.38 17.19 35.88 32.64-35.88 32.31z"/>
         </svg>
+
+    
     </div>
-    <div class="main-text-box">
-        <h1>CODE.compass 2.0</h1>
-        <a class="btn btn-full" href="events_raw.html">let's check the calendar!</a><br>
+        <div class="main-text-box">
+            <h1>CODE.compass 2.0</h1>
+            <button id="authorize_button" class="btn btn-no-border btn-no-border-green">log in</button>
+            <button id="signout_button" class="btn btn-no-border btn-no-border-pale">log out</button>
+            <div class="nav nav-calendar"></div>
+        </div>
     </div>
 
     <div class="floorplan-box">
@@ -50,7 +55,7 @@
                 <!-- <path fill="none" stroke="#1D1D1D" stroke-miterlimit="10" d="M-326.2-99.3h7000v2600h-7000z"/> -->
                 <path fill="none" stroke="#fff" stroke-miterlimit="10" d="M-326.2-99.3h7000v2600h-7000z"/>
 
-                <!-- <switch class="room-name-txt">
+                <switch class="room-name-txt">
                     <foreignObject x="290" y="2150" width="660" height="280">
                         <p>PAPER</p>
                     </foreignObject>
@@ -59,25 +64,22 @@
                     <foreignObject class="room-name-txt" x="1180" y="2150" width="284" height="93">
                         <p>ROCK</p>
                     </foreignObject>
-                </switch> -->
+                </switch>
 
             </svg>
         </div>
     </div>
     <!-- <div class="main-container"></div> -->
     <div>
-        <p>pls log in to see what is happening on campus</p>
         <p>(here you will see what is happening real time & room occupancy status)</p>
-        <button id="authorize_button" class="btn btn-full">log in</button>
-        <button id="signout_button" class="btn btn-empty">log out</button>
+        
     </div>
 
-    <a class="btn btn-empty " href="events.html">Show me more</a>
 
     <script src="script_main.js"></script>  
     <script async defer src="https://apis.google.com/js/api.js"
     onload="this.onload=function(){};handleClientLoad()"
-    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    onreadystatechange="if (this.readyState === 'complete') this.onload()" crossorigin="">
     </script>
 
 
