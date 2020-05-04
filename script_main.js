@@ -65,8 +65,8 @@ gapi.auth2.getAuthInstance().signOut();
 
 function showNavi() {
   var content = document.querySelector(".nav-calendar")
-  content.innerHTML += '<a class="btn btn-full" href="events_raw.html">let\'s check the calendar!</a><br>'
-  content.innerHTML += '<a class="btn btn-empty " href="events.html">Show me more</a>'
+  // content.innerHTML += '<a class="btn btn-full" href="events_raw.html">let\'s check the calendar!</a><br>'
+  content.innerHTML += '<a class="btn btn-no-border btn-no-border-green" href="#schedule">schedule</a>'
 
 
 }
@@ -145,37 +145,123 @@ gapi.client.calendar.calendarList.list({
 function eventsToFloorplan() {
     gapi.client.calendar.events.list({
         'calendarId': 'primary',
-        'timeMin': (new Date()).toISOString(),
+        'timeMin': (new Date("2020-06-15T10:00:00+02:00")).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
-        'maxResults': 8,
+        'maxResults': 20,
         'orderBy': 'startTime'
     }).then(function(response) {
-        var roomPaths = document.querySelector(".plan")
-
+        var roomPaths = document.querySelector('.plan')
+        var tempList = document.querySelector('.temp-list')
         const events = response.result.items;
-        console.log(events[0].summary);
-        var today = new Date("2020-02-01T08:00:00+02:00"); 
-        var current_date = today.toISOString();
 
+        for(let k = 0; k < 20; k++) {
+          let event = events[k];
 
-        // var test_date_2 = new Date("2020-02-03T11:00:00+01:00");  
-        // var test_date_2_String = test_date_2.toISOString();
+          if (event.location) { var room = event.location; } 
+          else { var room = 'remote' }
 
+          if (room.includes("Rock")) { room = 'ROCK' }
+          if (room.includes("Paper")) { room = 'PAPER' }
+          if (room.includes("Scissors")) { room = 'SCISSORS' }
+          if (room.includes("Spock")) { room = 'SPOCK' }
+          if (room.includes("Roomy")) { room = 'ROOMY' }
+          if (room.includes("kitchen")) {room = 'KITCHEN'}
+          if (room.includes("Jungle")) { room = 'JUNGLE' }
+          if (room.includes("Lab")) { room = 'LAB' }
 
-        // if (event.start.dateTime < test_date_2_String && event.end.dateTime > test_date_2_String)  {
-        // // roomPaths.innerHTML += '<text font-size="110px" fill="#FF7879"><textPath xlink:href=\'#jungle\'>' + event_name + '</textPath></text>'
-        // // roomPaths.innerHTML += '<text class="event-fit" font-size="60px" fill=#000 x=1000 y=2300>' + event_name + '</text>'
+          if (room.includes("X")) { room = 'X' }
+          if (room.includes("Room Y")) { room = 'ROOM Y' }
+          
+          if (room.includes("Cinema")) { room = 'CINEMA' }
+          if (room.includes("Wildenbruch")) { room = 'WILDENBRUCH' }
 
-        roomPaths.innerHTML += '<switch><foreignObject class="room-name-txt" x="980" y="2070" width="660" height="280" font-size="30"><p>'
-            + events[0].summary + ' </p></foreignObject></switch>'
-        // }
+          if (room.includes("Lexis")) { room = 'LEXIS' }
+          if (room.includes("Caf")) { room = 'CAFE' }
+   
+          if (room.includes("zoom")) { room = 'remote' }
+  
 
+          // if event is happening now, show it at rooms
+          var fakeDate = (new Date("2020-06-15T15:15:00+02:00")).toISOString()
 
-        // else {
-        //     console.log('FAAAAAAIL')
-        // }
+          if (event.start.dateTime < fakeDate && fakeDate < event.end.dateTime ) {
+            console.log (event.summary, room)
+            if (room.includes("PAPER")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="290" y="2070" width="660" height="280"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("ROCK")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="980" y="2070" width="660" height="280" font-size="30"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("SCISSORS")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="1820" y="2070" width="384" height="93"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("SPOCK")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="2490" y="2070" width="384" height="93"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("ROOMY")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-vertical" x="4440" y="1740" width="584" height="593"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("KITCHEN")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-light" x="4270" y="2070" width="384" height="93"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("JUNGLE")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="4950" y="2070" width="384" height="93"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("LAB")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="6930" y="1910" width="284" height="193"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("X")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7330" y="1980" width="484" height="93"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            if (room.includes("ROOM Y")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7790" y="1980" width="484" height="93"><p>'
+              + event.summary + ' </p></foreignObject></switch>'}
+            // if (room.includes("CINEMA")) {
+            //   roomPaths.innerHTML += '<switch><foreignObject class="room_event" ><p>'
+            //   + event.summary + ' </p></foreignObject></switch>'}
+            // if (room.includes("WILDENBRUCH")) {
+            //   roomPaths.innerHTML += '<switch><foreignObject class="room_event" ><p>'
+            //   + event.summary + ' </p></foreignObject></switch>'}
 
+          }
+          else  {
+            tempList.innerHTML += '<span>' + room + ' ----- ' +  event.start.dateTime + ' ----- ' + event.summary + '</span><br>'
+
+            if (room.includes("PAPER")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="290" y="2070" width="660" height="280"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("ROCK")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="980" y="2070" width="660" height="280" font-size="30"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("SCISSORS")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="1820" y="2070" width="384" height="93"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("SPOCK")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="2490" y="2070" width="384" height="93"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("ROOMY")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-vertical" x="4440" y="1740" width="584" height="593"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("KITCHEN")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-light" x="4270" y="2070" width="384" height="93"><p>' +
+              'FREE NOW </p></foreignObject></switch>'}
+            // if (room.includes("JUNGLE")) {
+            //   roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="4950" y="2070" width="384" height="93"><p>' + 
+            //   'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("LAB")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="6930" y="1910" width="284" height="193"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("X")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7330" y="1980" width="484" height="93"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+            if (room.includes("ROOM Y")) {
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7790" y="1980" width="484" height="93"><p>' + 
+              'FREE NOW </p></foreignObject></switch>'}
+          }
+         
+
+        } 
     })
 }
 
@@ -306,18 +392,19 @@ function formatEvents() {
                 event_type = "INFO SESSION"
               } 
               else {
-                event_type ="*category* & _tags_"
+                event_type ="category and tags"
               }
               // ['a', 'b', 'c'].includes('b')
         
           
               let date_and_day = '<div class="grid-element date">' + date + " " + month + ", " + day + '</div>'
-              let time = '<div class="grid-element time">' + hour + ":" + minutes + "- <br>" + endHour + ":" + endMinutes + '</div>'
+              let time = '<div class="grid-element time">' + hour + ":" + minutes + " - " + endHour + ":" + endMinutes + '</div>'
               let type = '<div class="grid-element type">' + event_type + '</div>'
               let title = '<div class="grid-element title">' + event_name + '</div>'
-              let location = '<div class="grid-element location">' + room_info + " " + room + '</div>'
+              let location = '<div class="grid-element location">' + room + '</div>'
+              let status = '<div class="grid-element status"> status comes here </div>'
         
-              let eventAll = '<div class="grid-container-browser grid--areas">' + date_and_day + time + type + title + location + '</div>'
+              let eventAll = '<div class="grid-container-browser grid--areas">' + date_and_day + time + type + title + location + status + '</div>'
               mainContainer.innerHTML += eventAll
 
               
