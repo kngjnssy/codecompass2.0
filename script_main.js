@@ -144,7 +144,7 @@ gapi.client.calendar.calendarList.list({
 
 function eventsToFloorplan() {
     gapi.client.calendar.events.list({
-        'calendarId': 'primary',
+        'calendarId': 'kinga.janossy@code.berlin',
         'timeMin': (new Date("2020-06-15T10:00:00+02:00")).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
@@ -267,7 +267,7 @@ function eventsToFloorplan() {
 
 function formatEvents() {
     gapi.client.calendar.events.list({
-        'calendarId': 'primary',
+        'calendarId': 'kinga.janossy@code.berlin',
         'timeMin': (new Date()).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
