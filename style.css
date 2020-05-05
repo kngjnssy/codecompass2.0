@@ -70,7 +70,7 @@ section {
 }
 
 .temp-list {
-    
+    padding-top: 100px;
 }
 
 .box_about {
@@ -187,13 +187,25 @@ button {
     /* margin: 10px auto; */
     text-align: left;
 }
-.main-container {
+
+.box_schedule {
     /* background-color: yellow; */
     border-radius: 2px solid white;
     color: #e9e9e9;
     width: 90%;
     max-width: 900px;
     margin: 20px auto;
+    text-align: left;
+}
+
+.box_schedule-alt {
+    background-color: rgba(0, 0, 0, 0.541);
+    border-radius: 2px solid white;
+    color: #e9e9e9;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 25px;
     text-align: left;
 }
 
@@ -245,7 +257,8 @@ button {
     grid-area: date-and-day;
     text-transform: uppercase;
     letter-spacing: 2px;
-    align-self: end;
+    align-self: start;
+    line-height: 1.8em;
   }
   
   .type {
@@ -253,14 +266,15 @@ button {
     font-size: 1em;
     grid-area: type;
     /* margin: auto auto 0 0; */
-    align-self: start;
+    align-self: flex-start;
+    line-height: 1.4em;
     color: rgba(224, 228, 10, 0.562);
   }
   
   .title {
     grid-area: title;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.35em;
     align-self: start;
   }
   
@@ -271,20 +285,20 @@ button {
     font-size: 1.25em;
     text-transform: uppercase;
     align-self: start;
-    justify-self: center;
+    /* justify-self: center; */
   }
 
   .status {
     grid-area: status;
     /* align-self: end; */
-    justify-self: center;
+    /* justify-self: center; */
     color: rgba(245, 245, 245, 0.226);
   }
   
 @media only screen and (max-width: 480px) {
     body { background-color: rgb(179, 2, 2); }
-    .location { justify-self: left; }
-    .status { justify-self: left; }
+    /* .location { justify-self: left; }
+    .status { justify-self: left; } */
 }
 /* something between these two */
 
@@ -294,7 +308,7 @@ button {
     }
     .grid--areas {
         grid-template-rows: auto auto;
-        grid-template-columns: 1.2fr 2.7fr 1fr;
+        grid-template-columns: 1.2fr 2.7fr 0.8fr;
         grid-gap: 0;
         grid-template-areas:
             "start-time type location"
