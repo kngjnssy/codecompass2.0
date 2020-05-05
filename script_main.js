@@ -415,14 +415,14 @@ function formatEvents() {
             }
             // ['a', 'b', 'c'].includes('b')
         
-            let date_and_day = '<div class="grid-element date">' + date + " " + month + ", " + day + '</div>'
-            let time = '<div class="grid-element time">' + hour + ":" + minutes + " - " + endHour + ":" + endMinutes + '</div>'
-            let type = '<div class="grid-element type">' + event_type + '</div>'
-            let title = '<div class="grid-element title">' + event_name + '</div>'
-            let location = '<div class="grid-element location">' + room + '</div>'
-            let status = '<div class="grid-element status"> status comes here </div>'
+            let date_and_day = '<div class="grid_schedule-element date">' + date + " " + month + ", " + day + '</div>'
+            let time = '<div class="grid_schedule-element time">' + hour + ":" + minutes + " - " + endHour + ":" + endMinutes + '</div>'
+            let type = '<div class="grid_schedule-element type">' + event_type + '</div>'
+            let title = '<div class="grid_schedule-element title">' + event_name + '</div>'
+            let location = '<div class="grid_schedule-element location">' + room + '</div>'
+            let status = '<div class="grid_schedule-element status"> status comes here </div>'
       
-            let eventAll = '<div class="grid-container-browser grid--areas">' + date_and_day + time + type + title + location + status + '</div>'
+            let eventAll = '<div class="grid_schedule-container grid_schedule-areas">' + date_and_day + time + type + title + location + status + '</div>'
             boxSchedule.innerHTML += eventAll
 
 
@@ -441,7 +441,7 @@ function formatEvents() {
                 var eventsToday = []
               }
               else {
-                let eventAllByDay = '<div class="grid-container-browser grid--areas">'  + time + type + title + location + status + '</div>'
+                let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">'  + time + type + title + location + status + '</div>'
                 eventsToday += 1
                 boxScheduleAlt.innerHTML += eventAllByDay 
               }
@@ -453,7 +453,7 @@ function formatEvents() {
                 var eventsTomorrow = []
               }
               else {
-                let eventAllByDay = '<div class="grid-container-browser grid--areas">'  + time + type + title + location + status + '</div>'
+                let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">'  + time + type + title + location + status + '</div>'
                 eventsTomorrow += when
                 boxScheduleAlt.innerHTML += eventAllByDay 
               }
@@ -467,7 +467,7 @@ function formatEvents() {
                 var eventsAfterTomorrow = []
               }
               else {
-                let eventAllByDay = '<div class="grid-container-browser grid--areas">' + date_and_day + time + type + title + location + status + '</div>'
+                let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">' + date_and_day + time + type + title + location + status + '</div>'
                 eventsAfterTomorrow += when
                 boxScheduleAlt.innerHTML += eventAllByDay 
               }

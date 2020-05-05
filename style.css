@@ -63,12 +63,17 @@ section {
 
 .box_logo{
     padding-top: 150px;    
+    
 }
 
 .box_floorplan{
     padding-top: 100px;
 }
 
+.box_legend {
+    min-width: 900px;
+    /* background-color: burlywood; */
+}
 .temp-list {
     padding-top: 100px;
 }
@@ -141,6 +146,7 @@ button {
 .plan {
     width: 85%;
     height: auto;
+    /* background-color: black; */
 }
 
 .room_event {
@@ -173,12 +179,27 @@ button {
     /* text-align: left; */
 }
 
+.legend {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 6em;
+    letter-spacing: 5px;
+    color: rgb(170, 175, 175);
+    text-align: left;
+}
+
 .events {
     text-align: left;
     width: 70%;
     width-max: 700px;
     /* margin: 30px auto; */
 }
+
+.room:hover {
+    fill: blueviolet;
+    /* color: blueviolet; */
+}
+
 /* ///////////////////// responsive event list ///////////////////// */
 
 .events-raw {
@@ -219,17 +240,41 @@ button {
   }
    */
 
-.grid-container-browser {
+/* ///////////////////////////// simple grid for legend /////////////////////////////  */
+.grid_legend-container {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.grid_legend-element {
+    /* background-color: rgba(45, 219, 161, 0.795); */
+    /* margin: 2px; */
+}
+
+.room_type-legend {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+/* ///////////////////////////// grid AREAS for schedule /////////////////////////////  */
+
+.grid_schedule-container {
     display: grid;
     /* border: 1px solid rgba(245, 245, 245, 0.192); */
-  }
+}
   
-  .grid-element {
+.grid_schedule-element {
     /* background-color: rgba(88, 88, 88, 0.082); */
-  }
-  
-  /* ----------- AREAS ----------- */
-  .grid--areas {
+}
+
+/* ----------- AREAS ----------- */
+.grid_schedule-areas {
     grid-gap: 1px;
     margin: 20px 0;
     padding: 10px 0 10px 10px;
@@ -241,9 +286,9 @@ button {
         "title"
         "location"
         "status";
-  }
-  
-  .time {
+}
+
+.time {
     letter-spacing: 2px;
     grid-area: start-time;
     font-family: 'Roboto', sans-serif;
@@ -295,18 +340,50 @@ button {
     color: rgba(245, 245, 245, 0.226);
   }
   
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 732px) {
     body { background-color: rgb(179, 2, 2); }
-    /* .location { justify-self: left; }
-    .status { justify-self: left; } */
+
+    .box_legend {
+        min-width: 350px;
+        width: 70%;
+        
+    }
+    .grid_legend-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: 2fr; */
+        /* grid-column-gap: 20px;
+        grid-row-gap: 15px; */
+
+    }
+
 }
+
+@media only screen and (min-width: 732px) and (max-width: 890px) {
+    .box_legend {
+        min-width: 350px;
+        width: 70%;
+        
+    }
+
+    .grid_legend-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-rows: 2fr; */
+        /* grid-column-gap: 20px;
+        grid-row-gap: 15px; */
+
+    }
+}
+
+
 /* something between these two */
 
 @media only screen and (min-width: 890px) { 
     body {
         /* background-color: blue; */
     }
-    .grid--areas {
+    .grid_schedule-areas {
         grid-template-rows: auto auto;
         grid-template-columns: 1.2fr 2.7fr 0.8fr;
         grid-gap: 0;
