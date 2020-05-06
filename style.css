@@ -241,7 +241,7 @@ button {
     font-family: 'Roboto', sans-serif;
     font-size: 0.8em;
     text-transform: capitalize;
-    color: rgb(141, 141, 141);
+    color: #8d8f91;
     cursor: pointer;
 } 
 /* ///////////////////// responsive event list ///////////////////// */
@@ -374,7 +374,7 @@ button {
   }
   
 @media only screen and (max-width: 732px) {
-    body { background-color: rgb(179, 2, 2); }
+    /* body { background-color: rgb(179, 2, 2); } */
 
     .box_legend {
         min-width: 350px;
