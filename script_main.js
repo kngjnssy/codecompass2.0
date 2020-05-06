@@ -325,6 +325,13 @@ function formatEvents() {
         var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+        // var headerSchedule = document.querySelector(".box_schedule_header")
+        // var headerTime = 'when?'
+        // var headerTitle = 'what?'
+        // var headerLocation = 'where?'
+        // headerSchedule.innerHTML += headerTime + headerTitle + headerLocation
+
+        
         // for loop for rendering events one by one to the frontend
         for(let k = 0; k < 15; k++) {
             let event = events[k];

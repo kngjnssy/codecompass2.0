@@ -82,7 +82,6 @@ section {
     padding-top: 200px;
 }
 
-
 button {
     appearance: none;
     background: none;
@@ -200,7 +199,35 @@ button {
     /* color: blueviolet; */
 }
 
+/* ///////////////////////////// simple grid for legend /////////////////////////////  */
+.grid_legend-container {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr 1fr;
+    grid-template-rows: 2fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 15px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.grid_legend-element {
+    /* background-color: rgba(45, 219, 161, 0.795); */
+    /* margin: 2px; */
+}
+
+.room_type-legend {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    text-transform: capitalize;
+    color: rgb(141, 141, 141);
+    cursor: pointer;
+} 
 /* ///////////////////// responsive event list ///////////////////// */
+
+
+.room_type-lu {
+    /* background-color: lime; */
+}
 
 .events-raw {
     width: 90%;
@@ -230,6 +257,11 @@ button {
     text-align: left;
 }
 
+.box_schedule_header {
+    background-color: red;
+}
+
+
 /* the line  */
 /* .location:after {
     display: block;
@@ -240,27 +272,6 @@ button {
   }
    */
 
-/* ///////////////////////////// simple grid for legend /////////////////////////////  */
-.grid_legend-container {
-    display: grid;
-    grid-template-columns: 0.6fr 1fr 1fr;
-    grid-template-rows: 2fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 15px;
-    justify-items: stretch;
-    align-items: stretch;
-}
-
-.grid_legend-element {
-    /* background-color: rgba(45, 219, 161, 0.795); */
-    /* margin: 2px; */
-}
-
-.room_type-legend {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8em;
-    text-transform: uppercase;
-}
 
 /* ///////////////////////////// grid AREAS for schedule /////////////////////////////  */
 
