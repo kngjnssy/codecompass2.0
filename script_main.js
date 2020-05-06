@@ -88,15 +88,6 @@ function eventsToFloorplan() {
 
         // var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         // var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        
-        // if (!happeningYet) {
-        //   var happeningYet = []
-        //   happeningNowList.innerHTML += '<p>happening now: </p>'
-        //   happeningYet += 1
-        // }
-        // else {
-        //   pass
-        // }
 
         // for loop for rendering events one by one to the frontend
         for(let k = 0; k < 15; k++) {
