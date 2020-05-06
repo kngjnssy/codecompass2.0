@@ -81,6 +81,11 @@ function eventsToFloorplan() {
     }).then(function(response) {
         const events = response.result.items;
         var roomPaths = document.querySelector('.plan')
+        var happeningNowList = document.querySelector('.happening-now-list')
+        var demoSign =document.querySelector('.demo-sign')
+        // var fakeNow = (new Date("2020-06-15T15:15:00+02:00")).toISOString()
+        var fakeNow = new Date("2020-06-15T15:15:00+02:00")
+        demoSign.innerHTML += '<div> for the sake of demonstration, the current time is set to ' + fakeNow + '</div>'
 
         // var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         // var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -110,10 +115,10 @@ function eventsToFloorplan() {
           /////////////// formatting location END ///////////////
 
           // if event is happening (fake)now, show it at rooms
-          var fakeNow = (new Date("2020-06-15T15:15:00+02:00")).toISOString()
+          
+
 
           if (event.start.dateTime < fakeNow && fakeNow < event.end.dateTime ) {
-            console.log('event enters the time check if block:', event.start.dateTime)
             if (room.includes("PAPER")) {
               roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="290" y="2070" width="660" height="280"><p>'
               + event.summary + ' </p></foreignObject></switch>'}
@@ -133,6 +138,7 @@ function eventsToFloorplan() {
               roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-big happening-now room_name-light" x="3300" y="740" width="850" height="693"><p>'
               +'<p class="happening-small"> happening now:</p>'
               + event.summary + ' </p></foreignObject></switch>'}
+              happeningNowList.innerHTML += '<div>'+ event.summary + ' at ' + event.location + '</div>'
             if (room.includes("KITCHEN")) {
               roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-light" x="4270" y="2070" width="384" height="93"><p>'
               + event.summary + ' </p></foreignObject></switch>'}
@@ -221,10 +227,8 @@ function formatEvents() {
             let event = events[k];
             var boxSchedule = document.querySelector(".box_schedule")
             var boxScheduleAlt = document.querySelector(".box_schedule-alt")
-            console.log('all events WOKRING: ', event)
 
             /////////////// formatting TIME ///////////////
-
             if (event.end.dateTime) {
               var eventName = event.summary
               var when = new Date(event.start.dateTime)
@@ -314,12 +318,12 @@ function formatEvents() {
 
           /////////////// schedule ///////////////
         
-          let date_and_day = '<div class="grid_schedule-element date">' + date + " " + month + ", " + day + '</div>'
-          let time = '<div class="grid_schedule-element time">' + hour + ":" + minutes + " - " + endHour + ":" + endMinutes + '</div>'
-          let type = '<div class="grid_schedule-element type">' + event_type + '</div>'
-          let title = '<div class="grid_schedule-element title">' + event_name + '</div>'
-          let location = '<div class="grid_schedule-element location">' + room + '</div>'
-          let status = '<div class="grid_schedule-element status"> status comes here </div>'
+          let date_and_day = '<div class="date">' + date + " " + month + ", " + day + '</div>'
+          let time = '<div class="time">' + hour + ":" + minutes + " - " + endHour + ":" + endMinutes + '</div>'
+          let type = '<div class="type">' + event_type + '</div>'
+          let title = '<div class="title">' + event_name + '</div>'
+          let location = '<div class="location">' + room + '</div>'
+          let status = '<div class="status"> status comes here </div>'
     
           let eventAll = '<div class="grid_schedule-container grid_schedule-areas">' + date_and_day + time + type + title + location + status + '</div>'
           boxSchedule.innerHTML += eventAll
@@ -328,18 +332,19 @@ function formatEvents() {
 
           /////////////// schedule V.2 ///////////////
 
-          var fakeDate = new Date("2020-06-15T10:00:00+02:00")
+          var fakeDate = new Date("2020-06-15T06:00:00+02:00")
           var nextDay = new Date(fakeDate);
           var nextNextDay = new Date(fakeDate);
           nextDay.setDate(fakeDate.getDate() + 1);
           nextNextDay.setDate(fakeDate.getDate() + 2);
 
           if (when.getDate() == fakeDate.getDate() && when.getMonth() == fakeDate.getMonth()) {
-            // console.log(when, "today")
             let dayLine = '<div class="date">' + date + " " + month + ", " + day + '</div>'
             if (!eventsToday) {
-              boxScheduleAlt.innerHTML += dayLine
+              let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">'  + time + type + title + location + status + '</div>'
               var eventsToday = []
+              boxScheduleAlt.innerHTML += dayLine
+              boxScheduleAlt.innerHTML += eventAllByDay 
             }
             else {
               let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">'  + time + type + title + location + status + '</div>'
@@ -350,8 +355,10 @@ function formatEvents() {
           else if (when.getDate() == nextDay.getDate() && when.getMonth() == fakeDate.getMonth()) {
             let dayLine = '<br><div class="date">' + date + " " + month + ", " + day + '</div>'
             if (!eventsTomorrow) {
-              boxScheduleAlt.innerHTML += dayLine
               var eventsTomorrow = []
+              let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">'  + time + type + title + location + status + '</div>'
+              boxScheduleAlt.innerHTML += dayLine
+              boxScheduleAlt.innerHTML += eventAllByDay 
             }
             else {
               let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">'  + time + type + title + location + status + '</div>'
@@ -364,8 +371,10 @@ function formatEvents() {
             // let dayLine = '<div class="date">' + date + " " + month + ", " + day + '</div>'
             let dayLine = '<br><div class="date"> happening later this month: </div>'
             if (!eventsAfterTomorrow) {
-              boxScheduleAlt.innerHTML += dayLine
               var eventsAfterTomorrow = []
+              let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">'  + time + type + title + location + status + '</div>'
+              boxScheduleAlt.innerHTML += dayLine
+              boxScheduleAlt.innerHTML += eventAllByDay 
             }
             else {
               let eventAllByDay = '<div class="grid_schedule-container grid_schedule-areas">' + date_and_day + time + type + title + location + status + '</div>'
@@ -373,9 +382,7 @@ function formatEvents() {
               boxScheduleAlt.innerHTML += eventAllByDay 
             }
           }
-
           /////////////// schedule V.2 END ///////////////
-        
 
         }
 

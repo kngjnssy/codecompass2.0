@@ -50,6 +50,14 @@ section {
     background-color: rgba(29, 29, 29, 0.671);
 }
 
+.demo-sign {
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    background-color: rgba(29, 29, 29, 0.671);
+    color: grey;
+}
+
 .box {
     width: 90%;
     max-width: 700px;
@@ -185,9 +193,6 @@ button {
     /* transform-origin: center; */
 
 }
-.happening-small {
-    font-size: 0.8em;
-}
 
 @keyframes now {
     from {
@@ -200,6 +205,16 @@ button {
         transform: scaleY(1.025);
     }
 }
+
+.happening-small {
+    font-size: 0.8em;
+}
+
+.happening-now-list {
+    display: none;
+    margin-bottom: 30px;
+}
+
 .legend {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -294,7 +309,6 @@ button {
   }
    */
 
-
 /* ///////////////////////////// grid AREAS for schedule /////////////////////////////  */
 
 .grid_schedule-container {
@@ -388,6 +402,13 @@ button {
         /* grid-column-gap: 20px;
         grid-row-gap: 15px; */
 
+    }
+
+    .happening-now {
+        display: none;
+    }
+    .happening-now-list {
+        display: inline-block;
     }
 
 }
