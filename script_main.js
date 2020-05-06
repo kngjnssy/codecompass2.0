@@ -241,8 +241,10 @@ function eventsToFloorplan() {
               roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="980" y="2070" width="660" height="280" font-size="30"><p>'
               + event.summary + ' </p></foreignObject></switch>'}
             if (room.includes("SCISSORS")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="1820" y="2070" width="384" height="93"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
+              roomPaths.innerHTML += '<rect class="happening-now" x="1800" y="2340" width="800" height="400" fill="blueviolet"/>'
+              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-big happening-now room_name-light" x="1820" y="2370" width="750" height="400">'
+              +'<p class="happening-small"> happening now:</p>'
+              + event.summary + ' </></foreignObject></switch>'}
             if (room.includes("SPOCK")) {
               roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="2490" y="2070" width="384" height="93"><p>'
               + event.summary + ' </p></foreignObject></switch>'}

@@ -178,6 +178,28 @@ button {
     /* text-align: left; */
 }
 
+.happening-now {
+    /* fill: magenta; */
+    font-weight: 100;
+    animation: now 0.6s ease-in-out alternate infinite;
+    /* transform-origin: center; */
+
+}
+.happening-small {
+    font-size: 0.8em;
+}
+
+@keyframes now {
+    from {
+        /* transform: scaleX(1); */
+        transform: scaleY(1);
+
+    }
+    to {
+        /* transform: scaleX(1.025); */
+        transform: scaleY(1.025);
+    }
+}
 .legend {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -415,7 +437,7 @@ button {
 
 /* ///////////////////// animation ///////////////////// */
 #logo {
-    animation: logo 2s ease;
+    /* animation: logo 2s ease; */
     /* animation: logo 1s ease infinite; */
     /* animation: logo 4s infinite linear; */
     animation: logo 1s ease-in-out infinite alternate;
@@ -433,3 +455,4 @@ button {
 
     }
 }
+
