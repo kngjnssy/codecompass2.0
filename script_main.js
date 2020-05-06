@@ -88,6 +88,15 @@ function eventsToFloorplan() {
 
         // var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         // var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        
+        // if (!happeningYet) {
+        //   var happeningYet = []
+        //   happeningNowList.innerHTML += '<p>happening now: </p>'
+        //   happeningYet += 1
+        // }
+        // else {
+        //   pass
+        // }
 
         // for loop for rendering events one by one to the frontend
         for(let k = 0; k < 15; k++) {
@@ -114,51 +123,60 @@ function eventsToFloorplan() {
           /////////////// formatting location END ///////////////
 
           // if event is happening (fake)now, show it at rooms
-          
-
+        
 
           if (event.start.dateTime < fakeNow && fakeNow < event.end.dateTime ) {
-            if (room.includes("PAPER")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="290" y="2070" width="660" height="280"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            if (room.includes("ROCK")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="980" y="2070" width="660" height="280" font-size="30"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            if (room.includes("SCISSORS")) {
-              roomPaths.innerHTML += '<rect class="happening-now" x="1800" y="2340" width="800" height="400" fill="blueviolet"/>'
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-big happening-now room_name-light" x="1820" y="2370" width="750" height="400">'
-              +'<p class="happening-small"> happening now:</p>'
-              + event.summary + ' </></foreignObject></switch>'}
-            if (room.includes("SPOCK")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="2490" y="2070" width="384" height="93"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            if (room.includes("ROOMY")) {
-              roomPaths.innerHTML += '<rect class="happening-now" x="3270" y="700" width="900" height="400" fill="blueviolet"/>'
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-big happening-now room_name-light" x="3300" y="740" width="850" height="693"><p>'
-              +'<p class="happening-small"> happening now:</p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-              happeningNowList.innerHTML += '<div>'+ event.summary + ' at ' + event.location + '</div>'
-            if (room.includes("KITCHEN")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-light" x="4270" y="2070" width="384" height="93"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            if (room.includes("JUNGLE")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="4950" y="2070" width="384" height="93"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            if (room.includes("LAB")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="6930" y="1910" width="284" height="193"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            if (room.includes("X")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7330" y="1980" width="484" height="93"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            if (room.includes("ROOM Y")) {
-              roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7790" y="1980" width="484" height="93"><p>'
-              + event.summary + ' </p></foreignObject></switch>'}
-            // if (room.includes("CINEMA")) {
-            //   roomPaths.innerHTML += '<switch><foreignObject class="room_event" ><p>'
-            //   + event.summary + ' </p></foreignObject></switch>'}
-            // if (room.includes("WILDENBRUCH")) {
-            //   roomPaths.innerHTML += '<switch><foreignObject class="room_event" ><p>'
-            //   + event.summary + ' </p></foreignObject></switch>'}
+            if (!happeningYet) {
+              var happeningYet = []
+              happeningYet = 1
+              happeningNowList.innerHTML += '<p>happening now: </p>'
+            }
+            if (happeningYet == 1) {
+              if (room.includes("PAPER")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="290" y="2070" width="660" height="280"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              if (room.includes("ROCK")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="980" y="2070" width="660" height="280" font-size="30"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              if (room.includes("SCISSORS")) {
+                roomPaths.innerHTML += '<rect class="happening-now" x="1800" y="2340" width="800" height="400" fill="blueviolet"/>'
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-big happening-now room_name-light" x="1820" y="2370" width="750" height="400">'
+                +'<p class="happening-small"> happening now:</p>'
+                + event.summary + ' </></foreignObject></switch>'}
+              if (room.includes("SPOCK")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="2490" y="2070" width="384" height="93"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              if (room.includes("ROOMY")) {
+                roomPaths.innerHTML += '<rect class="happening-now" x="3270" y="700" width="900" height="400" fill="blueviolet"/>'
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-big happening-now room_name-light" x="3300" y="740" width="850" height="693"><p>'
+                +'<p class="happening-small"> happening now:</p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+                happeningNowList.innerHTML += '<div>'+ event.summary + ' at ' + event.location + '</div>'
+              if (room.includes("KITCHEN")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-light" x="4270" y="2070" width="384" height="93"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              if (room.includes("JUNGLE")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="4950" y="2070" width="384" height="93"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              if (room.includes("LAB")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="6930" y="1910" width="284" height="193"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              if (room.includes("X")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7330" y="1980" width="484" height="93"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              if (room.includes("ROOM Y")) {
+                roomPaths.innerHTML += '<switch><foreignObject class="room_event" x="7790" y="1980" width="484" height="93"><p>'
+                + event.summary + ' </p></foreignObject></switch>'}
+              // if (room.includes("CINEMA")) {
+              //   roomPaths.innerHTML += '<switch><foreignObject class="room_event" ><p>'
+              //   + event.summary + ' </p></foreignObject></switch>'}
+              // if (room.includes("WILDENBRUCH")) {
+              //   roomPaths.innerHTML += '<switch><foreignObject class="room_event" ><p>'
+              //   + event.summary + ' </p></foreignObject></switch>'}
+            }
+            else {
+              pass
+            }
           }
 
           // else  {
