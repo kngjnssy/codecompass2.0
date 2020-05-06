@@ -83,8 +83,7 @@ function eventsToFloorplan() {
         var roomPaths = document.querySelector('.plan')
         var happeningNowList = document.querySelector('.happening-now-list')
         var demoSign =document.querySelector('.demo-sign')
-        // var fakeNow = (new Date("2020-06-15T15:15:00+02:00")).toISOString()
-        var fakeNow = new Date("2020-06-15T15:15:00+02:00")
+        var fakeNow = (new Date("2020-06-15T15:15:00+02:00")).toISOString() 
         demoSign.innerHTML += '<div> for the sake of demonstration, the current time is set to ' + fakeNow + '</div>'
 
         // var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
