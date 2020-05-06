@@ -12,7 +12,7 @@
 + Git Hooks
 + Let’s Encrypt
 
-The site is accessible [here](https://compass.tremula.de/){:target="_blank"}
+The site is accessible [here](https://compass.tremula.de/?target=_blank)
 
 ## The aim of the project
 
