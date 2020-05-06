@@ -455,12 +455,8 @@ button {
     }
 }
 
-
 /* ///////////////////// animation ///////////////////// */
 #logo {
-    /* animation: logo 2s ease; */
-    /* animation: logo 1s ease infinite; */
-    /* animation: logo 4s infinite linear; */
     animation: logo 1s ease-in-out infinite alternate;
     /* transform-origin: center; */
     /* transform-box: fill-box; */

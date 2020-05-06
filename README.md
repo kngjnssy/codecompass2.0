@@ -16,11 +16,13 @@ The site is accessible [here](https://compass.tremula.de/)
 
 ## The aim of the project
 
-The name ‘CODE Compass’ reflects the main purpose of the project: helping to navigate through time and space. The initial idea was to tackle the problem of finding our way around the building, which is, anyone new to the community or a guest can tell: challenging.
+The name **CODE Compass** reflects the main purpose of the project: helping to navigate through time and space. The initial idea was to tackle the problem of finding our way around the building, which is, anyone new to the community or a guest on the 4th floor can tell: challenging.
 
-This website is made to demonstrate and test functionalities for the 'Digital Board' planned to be set up on the CODE campus at 2+ locations (eg. at the main elevator, in the kitchen), combined with the digital, somewhat interactive floorplan of the campus. The complete content of the site can be accessed after logging in with a code.berlin email account.
+This website is made to demonstrate and test functionalities for the 'Digital Board' planned to be set up on the CODE campus at 2+ locations (eg. at the main elevator, in the kitchen). The live schedule, combined with the somewhat interactive floorplan of the campus will be displayed on two large screens. It also aims to provide the students and team alike with a simplified access to what is going on and where - over the internet.
 
 ## Functions and technology
+
+*The complete content of the site can be accessed after logging in with a code.berlin email account.*
 
 ### : Live Schedule
 

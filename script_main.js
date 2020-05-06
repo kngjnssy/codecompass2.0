@@ -393,7 +393,6 @@ function formatEvents() {
           /////////////// schedule V.2 END ///////////////
 
         }
-
       
     })
     .catch(error => console.error(error));
