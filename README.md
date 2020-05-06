@@ -29,7 +29,7 @@ The JSON objects extracted, formatted and rendered to the frontend with JavaScri
 
 ### : Interactive floorplan
 
-The actual image of the floorplan is a group of SVG elements, drawn in a graphic software, optimised with SVGOMG ([SVGO's Missing GUI](https://jakearchibald.github.io/svgomg/)). The text elements within the SVG are displayed within the `<foreignObject>` tag, therefore staying scalable and styleable with css at the same time. Some additional JavaScript is being used to enrich the visual experience - and to practice such skills. Hover states for different rooms and areas currently under designing.
+The actual image of the floorplan is a group of SVG elements, drawn in a graphic software, optimised with SVGOMG ([SVGO's Missing GUI](https://github.com/jakearchibald/svgomg/blob/master/README.md)). The text elements within the SVG are displayed within the `<foreignObject>` tag, therefore staying scalable and styleable with css at the same time. Some additional JavaScript is being used to enrich the visual experience - and to practice such skills. Hover states for different rooms and areas currently under designing.
 
 ### : The website
 
