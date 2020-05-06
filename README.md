@@ -43,4 +43,4 @@ The site is hosted on a VPS (via Hetzner, Ubuntu 18.04 distribution), on it’s 
 
 The site is can be visited [here](https://compass.tremula.de/).
 
-*The complete content of the site can be accessed after logging in with a code.berlin email account.*
+*The complete content of the site can be accessed after logging in with a code.berlin email account. For the sake of displaying a variety of sample events, the current time of the page is set to a specific date.*
