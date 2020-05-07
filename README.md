@@ -23,9 +23,11 @@ This website is made to demonstrate and test functionalities for the Digital Boa
 
 ### : Live schedule
 
-The live shedule displays currently running and upcoming events, such as lectures (LUs), workshops, guilds, community events or any event that is open to the community. Currently the site works through the Google Calendar API. After authentication (OAuth2), the client is able to see any calendar that is set open to the CODE community. The site is currently displaying placeholder events, as the aim for the near future is to move away from the Google API and use the CODE Learning Platform API directly for more accurate and up-to-date information.
+The live schedule displays currently running and upcoming events, such as lectures (LUs), workshops, guilds, community events or any event that is open to the community. Currently the site works through the Google Calendar API. After authentication (OAuth2), the client is able to see any calendar that is set open to the CODE community. The site is currently displaying placeholder events, as the aim for the near future is to move away from the Google API and use the CODE Learning Platform API directly for more accurate and up-to-date information.
 
-The JSON objects extracted, formatted and rendered to the frontend with JavaScript.
+The JSON objects are extracted, formatted and rendered to the frontend with JavaScript.
+
+There are currently two versions of the live schedule on the website. The first one reflects the initial design idea of the CODE team, the second, events being grouped by day aims to provide an alternative, possibly clearer overview of what's happening next. Coding the second version also presented some additional challenges and therefore further learning opportunities.
 
 ### : Interactive floorplan
 
@@ -41,6 +43,6 @@ For the CODE logo, an SVG element has been animated with simple CSS keyframe tra
 
 The site is hosted on a VPS (via Hetzner, Ubuntu 18.04 distribution), on it’s own server block set up with the help of Nginx. The server’s firewall is configured via UFW and it is accessed as a superuser from the terminal with a SSH key from a local machine. Updates,  commits of the projects are pushed from a local machine with the help of a post-receive git hook. The domain tremual.de is registered with the domain name registrar namecheap.com and the subdomain compass.tremula.de is set up as an ‘A Record’. The site has acquired a free SSL certificate using Let's Encrypt - which is renewed with crontab.  
 
-The site is can be visited [here](https://compass.tremula.de/).
+The site can be visited [here](https://compass.tremula.de/).
 
 *The complete content of the site can be accessed after logging in with a code.berlin email account. For the sake of displaying a variety of sample events, the current time of the page is set to a specific date.*

@@ -9,14 +9,14 @@
 </head>
 <body>
     <section class="section_into" id="intro"> 
-
         <div class="nav-fixed">
             <a class="btn btn-no-border btn-no-border-green" href="#intro">home</a>
             <a class="btn btn-no-border btn-no-border-green" href="#floorplan">floorplan</a>
-            <!-- these buttons are only visible after sign-in -->
+            <!-- the following content is only visible after sign-in -->
             <div class="nav nav-calendar"></div> 
-            <a class="btn btn-no-border btn-no-border-green" href="#about">about</a>
-            
+            <div class="demo-sign"></div>
+
+            <a class="btn btn-no-border btn-no-border-green" href="#about">about</a>   
         </div>
         <div class="box_logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="200" height="200" viewBox="200 200 200 200" xml:space="preserve">
@@ -28,9 +28,6 @@
             <button id="authorize_button" class="btn btn-no-border btn-no-border-green">log in</button>
             <button id="signout_button" class="btn btn-no-border btn-no-border-pale">log out</button>
         </div>
-
-        <div class="demo-sign"></div>
-
     </section>
     <section class="section_floorplan" id="floorplan">
         <div class="box_floorplan">
@@ -38,15 +35,12 @@
                 <svg version="1.1" class="plan" x="0" y="0" width="9180.4" height="4214.3" viewBox="-326.2 -413.6 9180.4 2914.3" xml:space="preserve">
                     <!-- <path id="background" fill="#1D1D1D" d="M-326-414h9180v2915H-326z"/> -->
                     <!-- <path id="background" fill="#FFF" d="M-326-1h9180v2915H-326z"/> -->
-
                     <g class="rooms background">
                     <path d="M8639.9 1282.3V946.7L8397.8-346l-873.2 163.6 275.5 1464.7h-150v340h-510.8v-115h-676.7v770h1343.9l-.4 108.5h875.8V1282.3z"/>
-                    <path fill="none" stroke="#000" stroke-width="50" stroke-linejoin="round" d="M8639.9 1282.3V946.7L8397.8-346l-873.2 163.6 275.5 1464.7h-150v340h-510.8v-115h-676.7v770h1343.9l-.4 108.5h875.8V1282.3z"/>
-                    </g>
+                    <path fill="none" stroke="#000" stroke-width="50" stroke-linejoin="round" d="M8639.9 1282.3V946.7L8397.8-346l-873.2 163.6 275.5 1464.7h-150v340h-510.8v-115h-676.7v770h1343.9l-.4 108.5h875.8V1282.3z"/></g>
                     <g class="rooms background">
                     <path d="M5724.4 176.8v1469.6H4820v-1293l-716.6 210.5v1082.5H2351.8h.1l-67.2-198-584.3 198h-44.1l-63-251.6L-147.9 1998v387.8h6610.5V25z"/>
-                    <path fill="none" stroke="#000" stroke-width="50" stroke-linejoin="round" d="M5724.4 176.8v1469.6H4820v-1293l-716.6 210.5v1082.5H2351.8h.1l-67.2-198-584.3 198h-44.1l-63-251.6L-147.9 1998v387.8h6610.5V25z"/>
-                    </g>
+                    <path fill="none" stroke="#000" stroke-width="50" stroke-linejoin="round" d="M5724.4 176.8v1469.6H4820v-1293l-716.6 210.5v1082.5H2351.8h.1l-67.2-198-584.3 198h-44.1l-63-251.6L-147.9 1998v387.8h6610.5V25z"/></g>
                     <path class="room peace room_type-dedicated" fill="#DCFD00" d="M4798.7 384v187.9l-342-.5v-88.6l342-98.8z"/>
                     <path class="room roomy room_type-lu" fill="#787779" d="M4121.4 579.6l2 553.4h305.8l-.1-640.8-307.7 87.4z"/>
                     <path class="room echo room_type-bookable" fill="#F8C26E" d="M1586.1 1424.6l48.7 193.9v42.4h-184.6v-191l135.9-45.3z"/>
@@ -144,13 +138,11 @@
                         <p>OUTER SPACE</p></foreignObject></switch>
                     <switch class="room_name room_name-small room_name-light"><foreignObject x="8280" y="1070" width="284" height="193">
                         <p>LIBRARY</p></foreignObject></switch>
-
                 </svg>
             </div>
         </div>
 
         <div class="box box_legend happening-now-list"></div>
-
         <div class="box box_legend">
             <div class="grid_legend-container">
                 <p class="grid_legend-element room_type-legend room_type-lu">LECTURER ROOMS</p>
@@ -164,7 +156,6 @@
                 <p class="grid_legend-element room_type-legend">EXIST x PART TIME PROJECT ROOMS</p>
             </div>
         </div>
-
     </section>
 
     <section class="section_schedule" id="schedule">
@@ -200,7 +191,6 @@
                         members[k].style.backgroundColor = colorover; //colorover
                         members[k].style.fill = colorover;
                         members[k].style.color = "black";
-
                     }
                 }
                 members[i].onmouseout = function() {

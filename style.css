@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Source+Sans+Pro:wght@700&display=swap');
-/* font-family: 'Roboto', sans-serif; */
 
 * { 
     margin: 0;
@@ -10,7 +9,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
 }
 
 body {
@@ -22,22 +21,24 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-section {
-    height: 100vh;
-}
-
 a {
     text-decoration: none;
     color: #e9e9e9;
 }
+
 a:hover {
     text-decoration: none;
     color: yellow;
 }
 
+section {
+    height: 100vh;
+}
+
 .section_into {
     /* background: rgba(241, 91, 141, 0.288); */
 }
+
 .section_floorplan {
     /* background-color: rosybrown; */
 }
@@ -80,7 +81,6 @@ a:hover {
 
 .box_logo{
     padding-top: 150px;    
-    
 }
 
 .box_floorplan{
@@ -91,6 +91,7 @@ a:hover {
     min-width: 900px;
     /* background-color: burlywood; */
 }
+
 .temp-list {
     padding-top: 100px;
 }
@@ -100,7 +101,9 @@ a:hover {
 }
 
 button {
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     background: none;
     border: none;
     outline: none;
@@ -189,7 +192,9 @@ button {
 }
 
 .room_name-vertical {
-    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
     transform: rotate(180deg);
     transform-origin: center;
     /* text-align: left; */
@@ -198,19 +203,26 @@ button {
 .happening-now {
     /* fill: magenta; */
     font-weight: 100;
-    animation: now 0.6s ease-in-out alternate infinite;
+    -webkit-animation: now 0.6s ease-in-out alternate infinite;
+            animation: now 0.6s ease-in-out alternate infinite;
     /* transform-origin: center; */
+    /* transform-box: fill-box; */
+}
 
+@-webkit-keyframes now {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(1.025);
+    }
 }
 
 @keyframes now {
     from {
-        /* transform: scaleX(1); */
         transform: scaleY(1);
-
     }
     to {
-        /* transform: scaleX(1.025); */
         transform: scaleY(1.025);
     }
 }
@@ -236,7 +248,7 @@ button {
 .events {
     text-align: left;
     width: 70%;
-    width-max: 700px;
+    max-width: 700px;
     /* margin: 30px auto; */
 }
 
@@ -248,6 +260,7 @@ button {
 /* ///////////////////////////// simple grid for legend /////////////////////////////  */
 .grid_legend-container {
     display: grid;
+    display: -ms-grid;
     grid-template-columns: 0.6fr 1fr 1fr;
     grid-template-rows: 2fr;
     grid-column-gap: 20px;
@@ -269,7 +282,6 @@ button {
     cursor: pointer;
 } 
 /* ///////////////////// responsive event list ///////////////////// */
-
 
 .room_type-lu {
     /* background-color: lime; */
@@ -307,7 +319,6 @@ button {
     background-color: red;
 }
 
-
 /* the line  */
 /* .location:after {
     display: block;
@@ -322,6 +333,7 @@ button {
 
 .grid_schedule-container {
     display: grid;
+    display: -ms-grid;
     /* border: 1px solid rgba(245, 245, 245, 0.192); */
 }
   
@@ -402,7 +414,6 @@ button {
     .box_legend {
         min-width: 350px;
         width: 70%;
-        
     }
     .grid_legend-container {
         display: grid;
@@ -410,12 +421,12 @@ button {
         /* grid-template-rows: 2fr; */
         /* grid-column-gap: 20px;
         grid-row-gap: 15px; */
-
     }
 
     .happening-now {
         display: none;
     }
+
     .happening-now-list {
         display: inline-block;
     }
@@ -426,7 +437,6 @@ button {
     .box_legend {
         min-width: 350px;
         width: 70%;
-        
     }
 
     .grid_legend-container {
@@ -438,9 +448,6 @@ button {
 
     }
 }
-
-
-/* something between these two */
 
 @media only screen and (min-width: 890px) { 
     body {
@@ -454,7 +461,7 @@ button {
             "start-time type location"
             "date-and-day title status"
 
-        }
+    }
    
 }
 
@@ -466,10 +473,20 @@ button {
 
 /* ///////////////////// animation ///////////////////// */
 #logo {
-    animation: logo 1s ease-in-out infinite alternate;
-    /* transform-origin: center; */
+    -webkit-animation: logo 1s ease-in-out infinite alternate;
+            animation: logo 1s ease-in-out infinite alternate;
+    transform-origin: center;
     /* transform-box: fill-box; */
-    /* transform-origin: bottom; */
+}
+
+@-webkit-keyframes logo {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(20deg);
+
+    }
 }
 
 @keyframes logo {

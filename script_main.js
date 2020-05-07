@@ -1,5 +1,4 @@
-
-// TODO hide api key 
+//////////////////// authorization to the google calendar API //////////////////// 
 var CLIENT_ID = '183857612019-7hr46cble04h91pvglmgecfdpssckm41.apps.googleusercontent.com';
 var API_KEY = 'AIzaSyD2Cb8n5HRPmm6TCrxKcyyvMuGpJBZ7Omw';
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -35,12 +34,13 @@ gapi.client.init({
 }
 
 // Called when the signed in status changes, to update the UI appropriately. After a sign-in, the API is called.
+// --------------------- calling custom functions instead of listUpcomingEvents() --------------------- //
 function updateSigninStatus(isSignedIn) {
     // formatEvents();
 if (isSignedIn) {
     authorizeButton.style.display = 'none';
     signoutButton.style.display = 'block';
-    listUpcomingEvents();
+    // listUpcomingEvents();
     formatEvents();
     eventsToFloorplan();
     showNavi();
@@ -60,15 +60,15 @@ function handleSignoutClick(event) {
 gapi.auth2.getAuthInstance().signOut();
 }
 
-// --------------------- logged in navigation --------------------- //
+// --------------------- show navigation once logged in --------------------- //
 
 function showNavi() {
   var content = document.querySelector(".nav-calendar")
-  // content.innerHTML += '<a class="btn btn-full" href="events_raw.html">let\'s check the calendar!</a><br>'
   content.innerHTML += '<a class="btn btn-no-border btn-no-border-green" href="#schedule">schedule</a>'
   content.innerHTML += '<a class="btn btn-no-border btn-no-border-green" href="#schedule2">schedule v.2</a>'
 }
-// --------------------- events on the floorplan  ----------------- //
+
+// --------------------- render events to the floorplan  ----------------- //
 
 function eventsToFloorplan() {
   gapi.client.calendar.events.list({
@@ -89,7 +89,7 @@ function eventsToFloorplan() {
         // var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         // var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-        // for loop for rendering events one by one to the frontend
+        // for loop for rendering events one by one 
         for(let k = 0; k < 15; k++) {
             let event = events[k];
       
@@ -114,8 +114,6 @@ function eventsToFloorplan() {
           /////////////// formatting location END ///////////////
 
           // if event is happening (fake)now, show it at rooms
-        
-
           if (event.start.dateTime < fakeNow && fakeNow < event.end.dateTime ) {
             if (!happeningYet) {
               var happeningYet = []
@@ -208,7 +206,7 @@ function eventsToFloorplan() {
     .catch(error => console.error(error));
 };
 
-// --------------------- events for the schedule  ----------------- //
+// --------------------- extract and format events for the schedule  ----------------- //
 
 function formatEvents() {
   gapi.client.calendar.events.list({
@@ -281,8 +279,7 @@ function formatEvents() {
               when = event.start.date;
             } // to show full day events
 
-          /////////////// formatting TIME END ///////////////
-      
+
           /////////////// formatting location ///////////////
 
           if (event.location) { var room = event.location; } 
@@ -302,15 +299,14 @@ function formatEvents() {
           if (room.includes("Lexis")) { room = 'LEXIS' }
           if (room.includes("Caf")) { room = 'CAFE' }
           if (room.includes("zoom")) { room = 'remote' }
-
-          /////////////// formatting location END ///////////////
       
-          /////////////// formatting  OTHER STUFF ///////////////
+          /////////////// formatting OTHER STUFF ///////////////
 
            var event_name = event.summary;
            var event_type = "";
 
            // ['a', 'b', 'c'].includes('b')
+
            if (event_name.includes("[OS LU]")) {
              event_name = event_name.replace("[OS LU] " , "");
              event_type = "LEARNING UNIT"
@@ -322,9 +318,8 @@ function formatEvents() {
            else {
              event_type ="category and tags"
            }
-          /////////////// formatting OTHER STUFF END///////////////
 
-          /////////////// schedule ///////////////
+          /////////////// render to frontend schedule V.1 ///////////////
         
           let date_and_day = '<div class="date">' + date + " " + month + ", " + day + '</div>'
           let time = '<div class="time">' + hour + ":" + minutes + " - " + endHour + ":" + endMinutes + '</div>'
@@ -336,9 +331,8 @@ function formatEvents() {
           let eventAll = '<div class="grid_schedule-container grid_schedule-areas">' + date_and_day + time + type + title + location + status + '</div>'
           boxSchedule.innerHTML += eventAll
 
-          /////////////// schedule END ///////////////
 
-          /////////////// schedule V.2 ///////////////
+          /////////////// render to frontend schedule V.2 ///////////////
 
           var fakeDate = new Date("2020-06-15T06:00:00+02:00")
           var nextDay = new Date(fakeDate);
@@ -390,81 +384,79 @@ function formatEvents() {
               boxScheduleAlt.innerHTML += eventAllByDay 
             }
           }
-          /////////////// schedule V.2 END ///////////////
-
         }
       
     })
     .catch(error => console.error(error));
 };
     
-// --------------------- DISPLAY CALENDARS --------------------- //
+// --------------------- initial functions for DISPLAY CALENDARS --------------------- //
 
-function listUpcomingEvents() {
-  // -------- PRIMARY / PERSONAL CALENDAR -------- //
-  gapi.client.calendar.events.list({
-      'calendarId': 'primary',
-      'timeMin': (new Date()).toISOString(),
-      'showDeleted': false,
-      'singleEvents': true,
-      'maxResults': 8,
-      'orderBy': 'startTime'
-  }).then(function(response) {
-      var events = response.result.items;
-      if (events.length > 0) {
-          var content = document.querySelector(".main-container-raw")
-          content.innerHTML += '<h2> here are the events on your main calendar</h2>'
-          for (i = 0; i < events.length; i++) {
-              var event = events[i];
-              var when = event.start.dateTime;
-              if (!when) { when = event.start.date; }
-              content.innerHTML += '<div class="events-raw">' + when + ' ---- ' + event.summary + '</div>'
-          }
-      } 
-      else { 
-          content.innerHTML += '<br><p>No upcoming events found.</p>' 
-      }
-  });
+// function listUpcomingEvents() {
+//   // -------- PRIMARY / PERSONAL CALENDAR -------- //
+//   gapi.client.calendar.events.list({
+//       'calendarId': 'primary',
+//       'timeMin': (new Date()).toISOString(),
+//       'showDeleted': false,
+//       'singleEvents': true,
+//       'maxResults': 8,
+//       'orderBy': 'startTime'
+//   }).then(function(response) {
+//       var events = response.result.items;
+//       if (events.length > 0) {
+//           var content = document.querySelector(".main-container-raw")
+//           content.innerHTML += '<h2> here are the events on your main calendar</h2>'
+//           for (i = 0; i < events.length; i++) {
+//               var event = events[i];
+//               var when = event.start.dateTime;
+//               if (!when) { when = event.start.date; }
+//               content.innerHTML += '<div class="events-raw">' + when + ' ---- ' + event.summary + '</div>'
+//           }
+//       } 
+//       else { 
+//           content.innerHTML += '<br><p>No upcoming events found.</p>' 
+//       }
+//   });
   
-  // -------- CODE COMMUNITY CALENDAR -------- //
-  gapi.client.calendar.events.list({
-      // 'calendarId': 'codebot@code.berlin',
-      // 'calendarId': 'learning-platform-bot@code.berlin',
-      'calendarId': 'code.berlin_crt6693rdcpdrrsjlg7gci4qok@group.calendar.google.com',
-      'timeMin': (new Date()).toISOString(),
-      'showDeleted': false,
-      'singleEvents': true,
-      'maxResults': 8,
-      'orderBy': 'startTime'
-  }).then(function(response) {
-      var commEvents = response.result.items;
-      if (commEvents.length > 0) {
-          var communityContainer = document.querySelector(".community-container-raw")
-          communityContainer.innerHTML += '<h2> the CODE Community calendar events </h2>'
+//   // -------- CODE COMMUNITY CALENDAR -------- //
+//   gapi.client.calendar.events.list({
+//       // 'calendarId': 'codebot@code.berlin',
+//       // 'calendarId': 'learning-platform-bot@code.berlin',
+//       'calendarId': 'code.berlin_crt6693rdcpdrrsjlg7gci4qok@group.calendar.google.com',
+//       'timeMin': (new Date()).toISOString(),
+//       'showDeleted': false,
+//       'singleEvents': true,
+//       'maxResults': 8,
+//       'orderBy': 'startTime'
+//   }).then(function(response) {
+//       var commEvents = response.result.items;
+//       if (commEvents.length > 0) {
+//           var communityContainer = document.querySelector(".community-container-raw")
+//           communityContainer.innerHTML += '<h2> the CODE Community calendar events </h2>'
   
-          for (i = 0; i < commEvents.length; i++) {
-              var commEvent = commEvents[i];
-              communityContainer.innerHTML += '<div class="events-raw">' + commEvent.start.dateTime + ' ---- ' + commEvent.summary + '</div>'
-          }
-      }
-  },
-          function(err) { console.error("Execute error", err); });
+//           for (i = 0; i < commEvents.length; i++) {
+//               var commEvent = commEvents[i];
+//               communityContainer.innerHTML += '<div class="events-raw">' + commEvent.start.dateTime + ' ---- ' + commEvent.summary + '</div>'
+//           }
+//       }
+//   },
+//           function(err) { console.error("Execute error", err); });
   
-  // -------- LIST OF OTHER CALENDARS -------- //
-  gapi.client.calendar.calendarList.list({
-      "maxResults": 10
-  }).then(function(response) {
-      var calendars = response.result.items;
-      if (calendars.length > 0) {
-          var calendarContainer = document.querySelector(".calendar-container-raw")
-          calendarContainer.innerHTML += '<h2> and here are some of the other calendars... </h2>'
+//   // -------- LIST OF OTHER CALENDARS -------- //
+//   gapi.client.calendar.calendarList.list({
+//       "maxResults": 10
+//   }).then(function(response) {
+//       var calendars = response.result.items;
+//       if (calendars.length > 0) {
+//           var calendarContainer = document.querySelector(".calendar-container-raw")
+//           calendarContainer.innerHTML += '<h2> and here are some of the other calendars... </h2>'
   
-          for (i = 0; i < calendars.length; i++) {
-              var calendar = calendars[i];
-              calendarContainer.innerHTML += '<div class="events-raw">' + calendar.summary + '</div>'
-          }
-      }
-  },
-          function(err) { console.error("Execute error", err); });
+//           for (i = 0; i < calendars.length; i++) {
+//               var calendar = calendars[i];
+//               calendarContainer.innerHTML += '<div class="events-raw">' + calendar.summary + '</div>'
+//           }
+//       }
+//   },
+//           function(err) { console.error("Execute error", err); });
   
-  }
+//   }
