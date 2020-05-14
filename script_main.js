@@ -64,8 +64,7 @@ gapi.auth2.getAuthInstance().signOut();
 
 function showNavi() {
   var content = document.querySelector(".nav-calendar")
-  content.innerHTML += '<div><a class="btn btn-no-border btn-no-border-green" href="#schedule">schedule</a></div>'
-  content.innerHTML += '<div><a class="btn btn-no-border btn-no-border-green" href="#schedule2">schedule v.2</a></div>'
+  content.innerHTML += '<a class="btn btn-no-border btn-no-border-green" href="#schedule">schedule</a>'
 }
 
 // --------------------- render events to the floorplan  ----------------- //
@@ -231,8 +230,7 @@ function formatEvents() {
         // for loop for rendering events one by one to the frontend
         for(let k = 0; k < 15; k++) {
             let event = events[k];
-            var boxSchedule = document.querySelector(".box_schedule")
-            var boxScheduleAlt = document.querySelector(".box_schedule-alt")
+            var boxScheduleAlt = document.querySelector(".box_schedule")
 
             /////////////// formatting TIME ///////////////
             if (event.end.dateTime) {
@@ -318,8 +316,6 @@ function formatEvents() {
            else {
              event_type ="category and tags"
            }
-
-          /////////////// render to frontend schedule V.1 ///////////////
         
           let date_and_day = '<div class="date">' + date + " " + month + ", " + day + '</div>'
           let time = '<div class="time">' + hour + ":" + minutes + " - " + endHour + ":" + endMinutes + '</div>'
@@ -327,10 +323,12 @@ function formatEvents() {
           let title = '<div class="title">' + event_name + '</div>'
           let location = '<div class="location">' + room + '</div>'
           let status = '<div class="status"> status comes here </div>'
-    
-          let eventAll = '<div class="grid_schedule-container grid_schedule-areas">' + date_and_day + time + type + title + location + status + '</div>'
-          boxSchedule.innerHTML += eventAll
 
+
+          /////////////// render to frontend schedule V.1 ///////////////
+
+          // let eventAll = '<div class="grid_schedule-container grid_schedule-areas">' + date_and_day + time + type + title + location + status + '</div>'
+          // boxSchedule.innerHTML += eventAll
 
           /////////////// render to frontend schedule V.2 ///////////////
 

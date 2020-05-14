@@ -1,96 +1,59 @@
-/* mobile */
-  @media only screen and (max-width: 415px) {
-    body {
-        /* background-color: red; */
-        overflow-x: hidden;
-    }
+/* ----------------- style.css is optimised for mobile first ----------------- */
+/* burger menu */
+/* 1 columns for legend */
+/* stacked grid for schedule */
 
-    .nav-links {
-        position: absolute;
-        right: 0px;
-        top: 10px;
-        height: 320px;
-        background-color: rgba(32, 32, 32, 0.85);
-        display: block;
-        flex-direction: column;
-        transform: translateY(-140%);
-        transition: transform 1s ease-in;
-    }
+/* ------> stlyes for larger screens ------>  */
 
+/* ----------------- TABLET/small screen ABOVE 480px ----------------- */
+
+@media only screen and (max-width: 480px) {
     .nav-links li {
         opacity: 0;
-    }
-
-    .burger {
-        display: inline-block;
-        /* position: fixed;
-        right: 20px; */
-    }
-
-    .grid_legend-container {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
+        text-align: right;    
 }
 
-/* tablet? */
-@media only screen and (min-width: 415px) and (max-width: 732px) {
-    /* body { background-color: rgb(179, 2, 2); } */
+    .nav-links {
+        position: fixed;   
+        right: 0px;
+        top: 50px;
+        height: 100vh;
+        background-color: rgba(32, 32, 32, 0.65);
+        display: block;
+        flex-direction: column;
+        width: 120px;
+        transform: translateX(100%);
+        transition: transform 1s ease-in;
+    }
+    
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-hide {
+        display: hidden;
+    }
+    
+    .burger {
+        display: inline-block;
+        position: fixed;
+        top: 10px;
+        right: 20px;
+    }
 
     .demo-sign {
         display: none;
     }
-    
-    .logo {
-        display: none;
-    }
-    .nav-links {
-        width: 100%;
-    }
-
-    .box_legend {
-        min-width: 350px;
-        width: 70%;
-    }
-    .grid_legend-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .happening-now {
-        display: none;
-    }
-
-    .happening-now-list {
-        display: inline-block;
-    }
-
-} 
- 
-/* tablet/small screen? */
-@media only screen and (min-width: 732px) and (max-width: 890px) {
-
-    .nav-links {
-        width: 60%;
-    }
-
-    .box_legend {
-        min-width: 350px;
-        width: 70%;
-    }
-
-    .grid_legend-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-    }
 }
 
-@media only screen and (min-width: 890px) { 
-    body {
-        background-color: blue;
+  @media only screen and (min-width: 480px) {
+
+    /* 2 columns for legend */
+    .grid_legend-container {
+        grid-template-columns: 1fr 1fr;
     }
-    .grid_schedule-areas {
+
+   .grid_schedule-areas {
         grid-template-rows: auto auto;
         grid-template-columns: 1.2fr 2.7fr 0.8fr;
         grid-gap: 0;
@@ -99,16 +62,34 @@
             "date-and-day title status"
 
     }
-   
-}
+    .demo-sign {
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        background-color: rgba(29, 29, 29, 0.671);
+        color: grey;
+    }
+
+    .happening-small {
+        font-size: 0.8em;
+    }
+    
+    .happening-now-list {
+        display: none;
+    }
+
+  }
+
+/* ----------------- screen ABOVE 1024px ----------------- */
+/* grid-areas for schedule STAY THE SAME as above? */
 
 @media only screen and (min-width: 1024px) {
-    body {
-        background-color: green;
-    }
-}
 
-.nav-active {
-    transform: translateY(0%);
-    /* background-color: turquoise; */
-}
+    /* 3 columns for legend */
+    .grid_legend-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+  }
+
+
