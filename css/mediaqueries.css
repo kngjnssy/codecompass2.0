@@ -1,0 +1,114 @@
+/* mobile */
+  @media only screen and (max-width: 415px) {
+    body {
+        /* background-color: red; */
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        height: 320px;
+        background-color: rgba(32, 32, 32, 0.85);
+        display: block;
+        flex-direction: column;
+        transform: translateY(-140%);
+        transition: transform 1s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: inline-block;
+        /* position: fixed;
+        right: 20px; */
+    }
+
+    .grid_legend-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* tablet? */
+@media only screen and (min-width: 415px) and (max-width: 732px) {
+    /* body { background-color: rgb(179, 2, 2); } */
+
+    .demo-sign {
+        display: none;
+    }
+    
+    .logo {
+        display: none;
+    }
+    .nav-links {
+        width: 100%;
+    }
+
+    .box_legend {
+        min-width: 350px;
+        width: 70%;
+    }
+    .grid_legend-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .happening-now {
+        display: none;
+    }
+
+    .happening-now-list {
+        display: inline-block;
+    }
+
+} 
+ 
+/* tablet/small screen? */
+@media only screen and (min-width: 732px) and (max-width: 890px) {
+
+    .nav-links {
+        width: 60%;
+    }
+
+    .box_legend {
+        min-width: 350px;
+        width: 70%;
+    }
+
+    .grid_legend-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+}
+
+@media only screen and (min-width: 890px) { 
+    body {
+        background-color: blue;
+    }
+    .grid_schedule-areas {
+        grid-template-rows: auto auto;
+        grid-template-columns: 1.2fr 2.7fr 0.8fr;
+        grid-gap: 0;
+        grid-template-areas:
+            "start-time type location"
+            "date-and-day title status"
+
+    }
+   
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background-color: green;
+    }
+}
+
+.nav-active {
+    transform: translateY(0%);
+    /* background-color: turquoise; */
+}

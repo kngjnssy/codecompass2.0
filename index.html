@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/mediaqueries.css" />
     <link rel="icon" type="image/png" href="assets/favico.png">
     <title>CODE.compass 2.0</title>
 </head>
 <body>
-    <section class="section_into" id="intro"> 
-        <div class="nav-fixed">
+    
+
+    <section class="section_into" id="intro">
+        <nav>
+            <div class="logo">
+                <!-- <h4>the nav!</h4> -->
+            </div>
+            <ul class="nav-links">
+                <li><a class="btn btn-no-border btn-no-border-green" href="#intro">home</a></li>
+                <li><a class="btn btn-no-border btn-no-border-green" href="#floorplan">floorplan</a></li>
+                <!-- <div class="nav-calendar"></div>  -->
+                <li><a class="btn btn-no-border btn-no-border-green" href="#about">about</a></li>
+                <li><a class="btn btn-no-border btn-no-border-green" href="#about">testest</a></li>
+                <li><a class="btn btn-no-border btn-no-border-green" href="#about">placeholder</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+    
+            </div>
+            <!-- <div class="demo-sign"></div> -->
+
+        </nav> 
+        <!-- <div class="nav-fixed">
             <a class="btn btn-no-border btn-no-border-green" href="#intro">home</a>
             <a class="btn btn-no-border btn-no-border-green" href="#floorplan">floorplan</a>
-            <!-- the following content is only visible after sign-in -->
+            the following content is only visible after sign-in
             <div class="nav nav-calendar"></div> 
-            <div class="demo-sign"></div>
 
             <a class="btn btn-no-border btn-no-border-green" href="#about">about</a>   
-        </div>
+        </div> -->
+
         <div class="box_logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="200" height="200" viewBox="200 200 200 200" xml:space="preserve">
                 <path id="logo" fill="#FFFFFF" d="M280.24 351.98l-52.69-49.5 52.7-49.83 18.38 17.19-35.88 32.64 35.88 32.31zM322.35 351.98l52.7-49.5-52.7-49.83-18.38 17.19 35.88 32.64-35.88 32.31z"/>
@@ -176,49 +200,13 @@
         </div>
     </section>
 
+    <script src="animation.js"></script>
     <script src="script_main.js"></script>  
     <script async defer src="https://apis.google.com/js/api.js"
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()" crossorigin="">
     </script>
-
-    <script>
-        function hoverHighlightClass(classname, colorover, coloroutBg, coloroutBgTxt="transparent") {
-            var members = document.getElementsByClassName(classname);
-            for (var i=0; i < members.length; i++) {
-                members[i].onmouseover = function() {
-                    for (var k=0; k < members.length; k++) {
-                        members[k].style.backgroundColor = colorover; //colorover
-                        members[k].style.fill = colorover;
-                        members[k].style.color = "black";
-                    }
-                }
-                members[i].onmouseout = function() {
-                    for (var k=0; k < members.length; k++) {
-                        members[k].style.backgroundColor = coloroutBgTxt;
-                        members[k].style.color = "#8d8f91";
-                        members[k].style.fill = coloroutBg;
-                    }
-                }
-                members[i].touchstart = function() {
-                    for (var k=0; k < members.length; k++) {
-                        members[k].style.backgroundColor = colorover; //colorover
-                        members[k].style.fill = colorover;
-                    }
-                }
-                members[i].touchend = function() {
-                    for (var k=0; k < members.length; k++) {
-                        members[k].style.backgroundColor = coloroutBgTxt;
-                        members[k].style.fill = coloroutBg;
-                    }
-                }
-            } 
-        }
-        hoverHighlightClass("room_type-lu", "violet", "grey");
-        hoverHighlightClass("room_type-dedicated", "violet", "yellowgreen");
-        hoverHighlightClass("room_type-bookable", "violet", "#F8C26E");
-
-    </script>
+    
 
 </body>
 </html>
