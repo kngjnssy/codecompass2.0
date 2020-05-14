@@ -205,6 +205,10 @@ button {
     -webkit-animation: now 0.6s ease-in-out alternate infinite;
             animation: now 0.6s ease-in-out alternate infinite;
 }
+  
+.happening-small {
+    font-size: 0.8em;
+}
 
 @-webkit-keyframes now {
     from {
@@ -223,17 +227,6 @@ button {
         transform: scaleY(1.025);
     }
 }
-
-.happening-now {
-    display: none;
-}
-
-.happening-now-list {
-    display: inline-block;
-    margin-bottom: 30px;
-
-}
-
 
 .legend {
     font-family: 'Roboto', sans-serif;

@@ -70,10 +70,6 @@
         color: grey;
     }
 
-    .happening-small {
-        font-size: 0.8em;
-    }
-    
     .happening-now-list {
         display: none;
     }
