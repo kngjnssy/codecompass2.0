@@ -27,6 +27,7 @@ body {
 
 a {
     text-decoration: none;
+    color: rgb(255, 94, 0);
 }
 
 a:hover { color: yellow; }
@@ -42,6 +43,8 @@ nav {
     height: 50px;
     width: 100%;
     background-color: rgba(29, 29, 29, 0.8);
+    z-index: 9999;
+
 }
 .nav-links {
     display: flex;
@@ -61,6 +64,7 @@ nav {
 
 .burger {
     display: none;
+    /* z-index: 9999; */
 }
 
 .burger div { 
@@ -128,6 +132,7 @@ label:active:after {
     border-radius: 3px;
     width: 170px;
     justify-content: space-around;
+    z-index: 9999;
 }
 
 /* ///////////////////// sections and boxes ///////////////////// */
@@ -186,9 +191,6 @@ header {
     padding-top: 150px;    
 }
 
-.box_floorplan{
-    padding-top: 100px;
-}
 
 .box_about {
     padding-top: 200px;
@@ -253,9 +255,27 @@ button {
 }
 
 /* ///////////////////// floorplan ///////////////////// */
+
+.section_floorplan {
+    /* border: 5px solid magenta; */
+    height: 900px;
+}
+
+.box_floorplan{
+    padding-top: 250px;
+    /* border: 2px solid yellow; */
+    height: 900px;
+}
+
 .plan {
-    width: 85%;
+    width: 800px;
+    position: absolute;
+    margin-right: -50%;
+    right: -5%;
+    /* border: 2px solid lightblue; */
     height: auto;
+    transform: rotate(90deg);
+    z-index: 0;
 }
 
 .room_event {

@@ -49,9 +49,39 @@
     .happening-now {
         display: none;
     }
+
+    .box_legend {
+        display: none;
+    }
+
 }
 
   @media only screen and (min-width: 480px) {
+    .section_floorplan {
+        /* border: 5px solid magenta; */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .box_floorplan{
+        padding-top: 100px;
+        margin-bottom: 10vh;
+        /* border: 2px solid yellow; */
+        height: 80vh;
+    }
+    
+    .plan {
+        width: 85%;
+        min-width: 900px;
+        position: inherit;
+        margin-left: auto;
+        margin-right: auto;
+        /* border: 2px solid lightblue; */
+        max-height: 70vh;
+        transform: rotate(0deg);
+        z-index: 0;
+    }
 
     /* 2 columns for legend */
     .grid_legend-container {
