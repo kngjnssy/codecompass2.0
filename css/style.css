@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Source+Sans+Pro:wght@700&display=swap');
 
+/* ///////////////////// global stuff ///////////////////// */
+
 * { 
     margin: 0;
     padding: 0;
@@ -26,6 +28,7 @@ a {
 
 a:hover { color: yellow; }
 
+/* ///////////////////// navigation ///////////////////// */
 nav {
     position: fixed;
     display: flex;
@@ -53,19 +56,78 @@ nav {
     display: none;
 }
 
-section { height: 100vh; }
-
-.section_schedule {
-    padding-top: 100px;
-    height: auto;
-}
-
 .burger div { 
     width: 25px;
     height: 3px;
     background-color :yellowgreen;
     margin: 5px;
     transition: all 0.5s ease;
+}
+
+/* ///////////////////// toggle dark mode ///////////////////// */
+
+.light-mode {
+    background-color: ivory;
+    color: rgb(27, 27, 27);
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 40px;
+	height: 22px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+    position: relative;
+    /* border: 1px solid violet; */
+
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 18px;
+	height: 18px;
+	background: #fff;
+    border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #161615;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-80%);
+}
+
+label:active:after {
+	width: 130px;
+}
+
+/* body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+} */
+
+/* ///////////////////// sections and boxes ///////////////////// */
+section { height: 100vh; }
+
+.section_schedule {
+    padding-top: 100px;
+    height: auto;
 }
 
 .box {
@@ -96,10 +158,9 @@ section { height: 100vh; }
     /* background-color: burlywood; */
 }
 
-.temp-list {
+/* .temp-list {
     padding-top: 100px;
-}
-
+} */
 
 button {
     -webkit-appearance: none;
@@ -110,6 +171,7 @@ button {
     outline: none;
 }
 
+/* ///////////////////// buttons ///////////////////// */
 #authorize_button,
 #signout_button {
     font-size: 1em;
@@ -162,6 +224,7 @@ button {
     color: rgba(172, 255, 47, 0.63);
 }
 
+/* ///////////////////// floorplan ///////////////////// */
 .plan {
     width: 85%;
     height: auto;

@@ -28,14 +28,8 @@
         </nav> 
 
         <div class="demo-sign"></div>
-        <!-- <div class="nav-fixed">
-            <a class="btn btn-no-border btn-no-border-green" href="#intro">home</a>
-            <a class="btn btn-no-border btn-no-border-green" href="#floorplan">floorplan</a>
-            the following content is only visible after sign-in
-            <div class="nav nav-calendar"></div> 
 
-            <a class="btn btn-no-border btn-no-border-green" href="#about">about</a>   
-        </div> -->
+
 
         <div class="box_logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="200" height="200" viewBox="200 200 200 200" xml:space="preserve">
@@ -44,6 +38,11 @@
         </div>
         <div class="box box_intro">
             <h1>CODE.compass 2.0</h1>
+            <div>
+                <input onclick='lightMode()' type="checkbox" id="switch" />
+                <label for="switch">Toggle</label>
+                <p> Toggle between light and dark mode! </p>
+            </div>
             <button id="authorize_button" class="btn btn-no-border btn-no-border-green">log in</button>
             <button id="signout_button" class="btn btn-no-border btn-no-border-pale">log out</button>
         </div>

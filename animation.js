@@ -23,6 +23,11 @@ const navSlide = () => {
 
 }
 
+const lightMode = () => {
+    var body = document.body;
+    body.classList.toggle('light-mode')
+}
+
 function hoverHighlightClass(classname, colorover, coloroutBg, coloroutBgTxt="transparent") {
     var members = document.getElementsByClassName(classname);
     for (var i=0; i < members.length; i++) {
