@@ -64,7 +64,7 @@ gapi.auth2.getAuthInstance().signOut();
 
 function showNavi() {
   var content = document.querySelector(".nav-calendar")
-  content.innerHTML += '<a class="btn btn-no-border btn-no-border-green" href="#schedule">schedule</a>'
+  content.innerHTML += '<a class="btn btn-no-border" href="#schedule">schedule</a>'
 }
 
 // --------------------- render events to the floorplan  ----------------- //

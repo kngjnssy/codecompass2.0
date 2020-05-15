@@ -13,7 +13,7 @@ const navSlide = () => {
             if (link.style.animation) {
                 link.style.animation = '';    
             } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.7}s`;
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
             }
         });
 
@@ -25,8 +25,29 @@ const navSlide = () => {
 
 const lightMode = () => {
     var body = document.body;
-    body.classList.toggle('light-mode')
+    var demo = document.querySelector('.demo-sign');
+    var navBg = document.querySelector('nav');
+    var btns = document.querySelectorAll('.btn');
+    var burgerLines = document.querySelectorAll('.burger-line')
+    var logo = document.querySelector('.logo-light')
+
+
+    body.classList.toggle('light-mode');
+    demo.classList.toggle('demo-light');
+    navBg.classList.toggle('nav-light');
+    logo.classList.toggle('logo-dark');
+
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].classList.toggle('btn-dark')
+    }
+
+    for (var i = 0; i < burgerLines.length; i++) {
+        burgerLines[i].classList.toggle('burger-line-dark')
+    }
+
 }
+
 
 function hoverHighlightClass(classname, colorover, coloroutBg, coloroutBgTxt="transparent") {
     var members = document.getElementsByClassName(classname);

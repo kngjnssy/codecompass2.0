@@ -8,42 +8,40 @@
     <link rel="icon" type="image/png" href="assets/favico.png">
     <title>CODE.compass 2.0</title>
 </head>
-<body>
-    
-
+<body id="body" class="dark-mode">
     <section class="section_into" id="intro">
         <nav>
             <ul class="nav-links">
-                <li><a class="btn btn-no-border btn-no-border-green" href="#intro">home</a></li>
-                <li><a class="btn btn-no-border btn-no-border-green" href="#floorplan">floorplan</a></li>
+                <li><a class="btn" href="#intro">home</a></li>
+                <li><a class="btn" href="#floorplan">floorplan</a></li>
                 <li class="nav-calendar"></li> 
-                <li><a class="btn btn-no-border btn-no-border-green" href="#about">about</a></li>
+                <li><a class="btn btn-no-border" href="#about">about</a></li>
             </ul>
 
             <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+                <div class="burger-line line1"></div>
+                <div class="burger-line line2"></div>
+                <div class="burger-line line3"></div>
             </div>
         </nav> 
 
+        <div class="toggle-text">
+            <input onclick='lightMode()' type="checkbox" id="switch" />
+           <label for="switch">Toggle</label>
+           <p> light / dark mode! </p>
+        </div>
+
+
         <div class="demo-sign"></div>
-
-
 
         <div class="box_logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="200" height="200" viewBox="200 200 200 200" xml:space="preserve">
-                <path id="logo" fill="#FFFFFF" d="M280.24 351.98l-52.69-49.5 52.7-49.83 18.38 17.19-35.88 32.64 35.88 32.31zM322.35 351.98l52.7-49.5-52.7-49.83-18.38 17.19 35.88 32.64-35.88 32.31z"/>
+                <path id="logo" class="logo-light" fill="#fff" d="M280.24 351.98l-52.69-49.5 52.7-49.83 18.38 17.19-35.88 32.64 35.88 32.31zM322.35 351.98l52.7-49.5-52.7-49.83-18.38 17.19 35.88 32.64-35.88 32.31z"/>
             </svg>
         </div>
         <div class="box box_intro">
             <h1>CODE.compass 2.0</h1>
-            <div>
-                <input onclick='lightMode()' type="checkbox" id="switch" />
-                <label for="switch">Toggle</label>
-                <p> Toggle between light and dark mode! </p>
-            </div>
-            <button id="authorize_button" class="btn btn-no-border btn-no-border-green">log in</button>
+            <button id="authorize_button" class="btn btn-no-border">log in</button>
             <button id="signout_button" class="btn btn-no-border btn-no-border-pale">log out</button>
         </div>
     </section>

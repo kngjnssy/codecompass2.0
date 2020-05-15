@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Source+Sans+Pro:wght@700&display=swap');
 
 /* ///////////////////// global stuff ///////////////////// */
+:root {
+    --dark-color: rgb(29, 29, 29);
+    --light-color: #e9e9e9;
+    --green: chartreuse;
+}
 
 * { 
     margin: 0;
@@ -15,15 +20,12 @@ html { scroll-behavior: smooth; }
 body {
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
-    background-color: rgb(29, 29, 29);
-    color: #e9e9e9;
     font-weight: 100;
     text-rendering: optimizeLegibility;
 }
 
 a {
     text-decoration: none;
-    color: #e9e9e9;
 }
 
 a:hover { color: yellow; }
@@ -42,35 +44,34 @@ nav {
     display: flex;
     /* width: 40%; */
     justify-content: space-around;
+    color: var(--green);
 }
 
 .nav-links a {
     letter-spacing: 2px;
+
 }
 .nav-links li {
     list-style: none;
     opacity: 1;
 }
 
- .burger {
+.burger {
     display: none;
 }
 
 .burger div { 
     width: 25px;
     height: 3px;
-    background-color :yellowgreen;
     margin: 5px;
     transition: all 0.5s ease;
 }
 
-/* ///////////////////// toggle dark mode ///////////////////// */
-
-.light-mode {
-    background-color: ivory;
-    color: rgb(27, 27, 27);
+.burger-line {
+    background-color: var(--green);
 }
 
+/* ///////////////////// toggle button ///////////////////// */
 input[type=checkbox]{
 	height: 0;
 	width: 0;
@@ -82,8 +83,8 @@ label {
 	text-indent: -9999px;
 	width: 40px;
 	height: 22px;
-	background: grey;
-	display: block;
+	background: rgb(29, 29, 29);
+	display: flex;
 	border-radius: 100px;
     position: relative;
     /* border: 1px solid violet; */
@@ -115,12 +116,16 @@ label:active:after {
 	width: 130px;
 }
 
-/* body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-} */
+.toggle-text {
+    display: flex;
+    position: fixed;
+    top: 100px;
+    background-color: rgb(255, 94, 0);
+    padding: 3px;
+    border-radius: 3px;
+    width: 170px;
+    justify-content: space-around;
+}
 
 /* ///////////////////// sections and boxes ///////////////////// */
 section { height: 100vh; }
@@ -186,30 +191,7 @@ button {
     text-transform: uppercase;
     margin: 10px auto;
     border-radius: 3px;
-}
-
-.btn-hidden {
-    display: none;
-    color: transparent;
-}
-
-.btn-full {
-    background-color: chartreuse;
-    color: black;
-    font-weight: bolder;
-}
-
-.btn-empty {
-    color: chartreuse;
-}
-
-.btn-no-border {
-    border: none;
-    background-color: transparent;
-}
-
-.btn-no-border-green {
-    color: greenyellow;
+    color: var(--green);
 }
 
 .btn-no-border-pale {
@@ -222,6 +204,16 @@ button {
 
 .btn-no-border-pale:hover {
     color: rgba(172, 255, 47, 0.63);
+}
+
+.btn-dark {
+    color: black;
+    font-weight: bolder;
+}
+
+.btn-hidden {
+    display: none;
+    color: transparent;
 }
 
 /* ///////////////////// floorplan ///////////////////// */
@@ -413,6 +405,11 @@ button {
     transform-box: fill-box;
 }
 
+.logo-dark {
+    
+    fill: #000;
+}
+
 @keyframes logo {
     from {
         transform: rotate(0deg);
@@ -444,4 +441,26 @@ button {
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px,-6px);
 
+}
+
+
+/* ///////////////////// toggle dark mode ///////////////////// */
+
+body.dark-mode {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+body.light-mode {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.nav-light {
+    background-color: var(--light-color);
+    opacity: 0.8;
+}
+
+.burger-line-dark {
+    background-color: var(--dark-color);
 }
