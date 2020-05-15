@@ -8,42 +8,27 @@
     <link rel="icon" type="image/png" href="assets/favico.png">
     <title>CODE.compass 2.0</title>
 </head>
-<body id="body" class="dark-mode">
-    <section class="section_into" id="intro">
-        <nav>
-            <ul class="nav-links">
-                <li><a class="btn" href="#intro">home</a></li>
-                <li><a class="btn" href="#floorplan">floorplan</a></li>
-                <li class="nav-calendar"></li> 
-                <li><a class="btn btn-no-border" href="#about">about</a></li>
-            </ul>
 
-            <div class="burger">
-                <div class="burger-line line1"></div>
-                <div class="burger-line line2"></div>
-                <div class="burger-line line3"></div>
-            </div>
-        </nav> 
+<body id="body" class="dark-mode" onload="startTime()">
 
-        <div class="toggle-text">
-            <input onclick='lightMode()' type="checkbox" id="switch" />
-           <label for="switch">Toggle</label>
-           <p> light / dark mode! </p>
-        </div>
-
-
-        <div class="demo-sign"></div>
-
-        <div class="box_logo">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="200" height="200" viewBox="200 200 200 200" xml:space="preserve">
-                <path id="logo" class="logo-light" fill="#fff" d="M280.24 351.98l-52.69-49.5 52.7-49.83 18.38 17.19-35.88 32.64 35.88 32.31zM322.35 351.98l52.7-49.5-52.7-49.83-18.38 17.19 35.88 32.64-35.88 32.31z"/>
+    <header>
+        <div class="box_header">
+            <svg version="1.1" id="logo_tamas" x="0" y="0" width="226.771" height="226.771" viewBox="-289.719 33.347 226.771 226.771" xml:space="preserve">
+                <circle fill="none" stroke="#000" stroke-width="13" stroke-miterlimit="10" cx="-176.184" cy="146.532" r="99.7"/>
+                <path d="M-173.057 195.006l-62.433-18.499 22.181-61.404 21.753 6.423-15.587 40.765 41.879 11.476zM-139.229 177.963l22.351-61.148-62.517-18.755-7.88 21.325 42.136 11.646-15.844 40.509z"/>
             </svg>
+
+            <div class="current_time"></div>
+
         </div>
-        <div class="box box_intro">
-            <h1>CODE.compass 2.0</h1>
-            <button id="authorize_button" class="btn btn-no-border">log in</button>
-            <button id="signout_button" class="btn btn-no-border btn-no-border-pale">log out</button>
-        </div>
+
+    </header>
+
+    <button id="authorize_button" class="btn-hidden">log in</button>
+    <button id="signout_button" class="btn-hidden">log out</button>
+
+    <section class="section_schedule display" id="schedule">
+        <div class="box_schedule"></div>
     </section>
 
     <section class="section_floorplan" id="floorplan">
@@ -175,19 +160,11 @@
         </div>
     </section>
 
-    <section class="section_schedule" id="schedule">
-        <div class="box_schedule"></div>
-        <a href="schedule_display.html" target="_blank">check the display version here</a> 
-    </section>
-
-    <section class="section_about" id="about">
-        <!-- <div class="box temp-list"></div> -->
-        <div class="box box_about">
-            <p>This is a CODE semester project within the SPP : Solo-Project Project, developed by Kinga Janossy.<br> A working in progress.</p><br>
-            <br>
-            For further info, please visit <a href="https://github.com/kngjnssy/codecompass2.0/blob/master/README.md" target="_blank">https://github.com/kngjnssy/codecompass2.0</a> 
-        </div>
-    </section>
+    <div class="toggle-text">
+        <input onclick='lightMode()' type="checkbox" id="switch" />
+       <label for="switch">Toggle</label>
+       <p> light / dark mode! </p>
+    </div>
 
     <script src="animation.js"></script>
     <script src="script_main.js"></script>  

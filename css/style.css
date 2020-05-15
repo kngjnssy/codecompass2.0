@@ -5,6 +5,7 @@
 /* ///////////////////// global stuff ///////////////////// */
 :root {
     --dark-color: rgb(29, 29, 29);
+    --dark-color-text: rgb(73, 73, 73);
     --light-color: #e9e9e9;
     --green: chartreuse;
 }
@@ -29,6 +30,8 @@ a {
 }
 
 a:hover { color: yellow; }
+
+
 
 /* ///////////////////// navigation ///////////////////// */
 nav {
@@ -133,6 +136,39 @@ section { height: 100vh; }
 .section_schedule {
     padding-top: 100px;
     height: auto;
+}
+
+.display {
+    padding-top: 0;
+}
+
+header {
+    background:#F45353;
+    height: 140px;
+    padding-top: 6px;
+    padding-left: 70px;
+
+}
+
+.box_header {
+    max-width: 1670px;
+    height: 120px;
+    /* border: blue 1px solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.current_time {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+}
+
+#logo_tamas {
+    height: 110px;
 }
 
 .box {
@@ -265,15 +301,6 @@ button {
     font-size: 0.8em;
 }
 
-@-webkit-keyframes now {
-    from {
-        transform: scaleY(1);
-    }
-    to {
-        transform: scaleY(1.025);
-    }
-}
-
 @keyframes now {
     from {
         transform: scaleY(1);
@@ -322,11 +349,7 @@ button {
 
 /* ///////////////////////////// grid for schedule /////////////////////////////  */
 .box_schedule {
-    background-color: rgba(0, 0, 0, 0.541);
-    border-radius: 2px solid white;
-    color: #e9e9e9;
-    width: 90%;
-    max-width: 900px;
+    width: 95%;
     margin: 20px auto;
     padding: 25px;
     text-align: left;
@@ -340,7 +363,7 @@ button {
     margin: 20px 0;
     padding: 10px 0 10px 10px;
     grid-gap: 2px;
-    background-color: rgba(43, 42, 42, 0.178);
+    background-color: rgba(134, 134, 134, 0.075);
     grid-template-areas:
         "start-time"
         "date-and-day"
@@ -351,13 +374,14 @@ button {
 }
 
 .time {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     grid-area: start-time;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 1.6em;
     /* margin: auto auto 0 0; */
     align-self: start;
+    line-height: 1em;
 }
   
 .date {
@@ -366,15 +390,15 @@ button {
     letter-spacing: 2px;
     align-self: start;
     line-height: 1.8em;
+    font-weight: bolder;
 }
 
 .type {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     font-size: 1em;
     grid-area: type;
-    align-self: flex-start;
+    align-self: center;
     line-height: 1.4em;
-    color: rgba(224, 228, 10, 0.562);
 }
   
 .title {
@@ -390,27 +414,42 @@ button {
     font-weight: 700;
     font-size: 1.25em;
     text-transform: uppercase;
-    align-self: start;
+
   }
 
 .status {
     grid-area: status;
-    color: rgba(245, 245, 245, 0.226);
+    font-weight: light;
+    /* color: rgba(245, 245, 245, 0.226); */
 }
 
 /* ///////////////////// animation ///////////////////// */
 #logo {
-    animation: logo 3s ease-in-out;
+    animation: logo_rotate_once 3s ease-in-out;
     transform-origin: center;
     transform-box: fill-box;
 }
 
 .logo-dark {
-    
     fill: #000;
 }
 
-@keyframes logo {
+#logo_tamas {
+    animation: logo_rotate 15s infinite linear ;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes logo_rotate_once {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes logo_rotate {
     from {
         transform: rotate(0deg);
     }
@@ -453,7 +492,7 @@ body.dark-mode {
 
 body.light-mode {
   background-color: var(--light-color);
-  color: var(--dark-color);
+  color: var(--dark-color-text);
 }
 
 .nav-light {

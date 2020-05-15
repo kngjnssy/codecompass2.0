@@ -67,6 +67,45 @@ function showNavi() {
   content.innerHTML += '<a class="btn btn-no-border" href="#schedule">schedule</a>'
 }
 
+// onload only at schedule_display.html 
+function startTime() {
+  var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var today=new Date();
+  var day=today.getDay();
+  var d=today.getDate();
+  var mo=today.getMonth();
+  var y=today.getFullYear();
+  var h=today.getHours();
+  var m=today.getMinutes();
+  var s=today.getSeconds();
+  var currentTimeBox = document.querySelector(".current_time")
+
+  // add a zero in front of numbers<10
+  for (var i=0; i < 7; i++) {
+          if (day == i){
+            day = dayNames[i]
+          } 
+      }
+  for (var i=0; i <= 12; i++) {
+  if (mo == i){
+        mo = monthNames[i]
+      } 
+    }
+
+  m = checkTime(m);
+  s = checkTime(s);
+  t = setTimeout('startTime()', 500);
+  currentTimeBox.innerHTML = '<p>' + h + ':' + m + ':' + s + ' ' + d + ' ' + mo + ', ' + day + ' ' + '</p>'
+}
+
+function checkTime(i) {
+  if (i<10) {
+    i="0" + i;
+  }
+  return i;
+}
+
 // --------------------- render events to the floorplan  ----------------- //
 
 function eventsToFloorplan() {
