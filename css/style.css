@@ -227,12 +227,17 @@ form {
 form input {
     /* border: 2px solid var(--green); */
     margin-bottom: 15px;
+    margin-top: 5px;
     height: 22px;
+    text-indent: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 0.8em;
 
 }
 
 .form-styling {
-	text-indent: 5px;
+	/* text-indent: 5px; */
     width: 100%;
     border-radius: 4px;
     border-style: none;
@@ -241,6 +246,11 @@ form input {
 
 form textarea {
     height: auto;
+    text-indent: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    line-height: 1.8em;
+    font-size: 0.8em;
 }
 
 

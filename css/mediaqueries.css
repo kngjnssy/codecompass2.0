@@ -54,9 +54,10 @@
         display: none;
     }
 
+
 }
 
-  @media only screen and (min-width: 480px) {
+@media only screen and (min-width: 480px) {
     .section_floorplan {
         /* border: 5px solid magenta; */
         height: 100vh;
@@ -114,10 +115,15 @@
         display: none;
     }
 
-  }
+}
 
+@media only screen and (max-width: 768px) {
+    .btn-full {
+        margin-right: 0;
+    }
+}
 
-  @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
 
     .box_schedule {
         width: 90%;
@@ -170,7 +176,7 @@
     }
 
 
-  }
+}
 /* ----------------- screen ABOVE 1024px ----------------- */
 /* grid-areas for schedule STAY THE SAME as above? */
 
@@ -219,9 +225,9 @@
         font-size: 1em;
     }
 
-  }
+}
 
-  @media only screen  and (min-width : 1224px) {
+@media only screen  and (min-width : 1224px) {
     .box_schedule {
         max-width: 1150px;
     }
@@ -253,10 +259,10 @@
     }
 
 
-  }
+}
 
 /* for the big screen  */
-  @media only screen  and (min-width : 1874px) {
+@media only screen  and (min-width : 1874px) {
     .box_schedule {
         max-width: 1700px;
     }
@@ -283,6 +289,6 @@
         right: 0px;
     }
 
-  }
+}
 
 
