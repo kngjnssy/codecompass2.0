@@ -10,13 +10,16 @@
     <title>CODE.compass 2.0</title>
 </head>
 <body id="body" class="dark-mode">
-    <section class="section_into" id="intro">
+    <section class="section_home" id="home">
         <nav>
             <ul class="nav-links">
-                <li><a class="btn" href="#intro">home</a></li>
+                <li><a class="btn" href="#home">home</a></li>
+                <li><a class="btn" href="#news">news</a></li>
                 <li><a class="btn" href="#floorplan">floorplan</a></li>
                 <li class="nav-calendar"></li> 
                 <li><a class="btn btn-no-border" href="#info">info</a></li>
+                <li><a class="btn btn-no-border" href="#contact">contact</a></li>
+
             </ul>
 
             <div class="burger">
@@ -32,7 +35,6 @@
            <p> light / dark mode! </p>
         </div>
 
-
         <div class="demo-sign"></div>
 
         <div class="box_logo">
@@ -40,11 +42,21 @@
                 <path id="logo" class="logo-light" fill="#fff" d="M280.24 351.98l-52.69-49.5 52.7-49.83 18.38 17.19-35.88 32.64 35.88 32.31zM322.35 351.98l52.7-49.5-52.7-49.83-18.38 17.19 35.88 32.64-35.88 32.31z"/>
             </svg>
         </div>
-        <div class="box box_intro">
+
+        <div class="box box_home">
             <h1>CODE.compass 2.0</h1>
 
             <button id="authorize_button" class="btn btn-no-border">log in</button>
             <button id="signout_button" class="btn btn-no-border btn-no-border-pale">log out</button>
+        </div>
+    </section>
+
+    <section id="news" class="section_news">
+        <div class="box box_news">
+            <div class="news_post">news 1 </div>
+            <div class="news_post">news 2 </div>
+            <div class="news_post">news 3 </div>
+            <div class="news_post">news 4 </div>
         </div>
     </section>
 
@@ -193,42 +205,45 @@
             <br>
             <p>For further info, please visit <a href="https://github.com/kngjnssy/codecompass2.0/blob/master/README.md" target="_blank">https://github.com/kngjnssy/codecompass2.0</a></p>
 
-            <div class="kwes-form box_form">
-                <form method="POST" action="https://kwes.io/api/foreign/forms/oPlwrjyPuITfj5R7FHqo">
-                    <div class="form_container">
-                        <label class="form-styling form_item" for="name">what is your name?</label>
-                        <input class="form-styling form_item" type="text" name="name" placeholder="this is required but you can lie"required>
-                    </div>
-
-                    <div class="form_container">
-                        <label class="form-styling form_item" for="shoesize">what's your shoe size?</label>
-                        <input class="form-styling form_item" type="number" name="shoesize" placeholder="only numbers pls" required>
-                    </div>
-
-                    <div class="form_container">
-                        <label class="form-styling form_item" for="email">your email? </label>
-                        <input class="form-styling form_item" type="email" name="email" placeholder="not required :)">
-                    </div>
-                    
-                    <div class="form_container">
-                        <label class="form-styling form_item" for="msg">anything u wanna share?</label>
-                        <textarea class="form-styling form_item" type="text" name="msg" placeholder="i mean getting empty emails is fun, too, but.. " rows="10"></textarea>
-                    </div>
-
-                    <div class="form_container">
-                        <div class="form-styling form_item"></div>
-                        <div class="button-container form_item"> <button class="btn btn-full" type="submit">Submit</button></div>
-                    </div>
-
-                </form>
-            </div>
-
-            <h1 class="box box_social">
-                <a class="fab fa-instagram-square" href="http://instagram.com/_u/codeuniversity/" target="_blank"></a>
-                <a class="fab fa-linkedin" href="http://linkedin.com/school/codeuniversity/" target="_blank"></a>
-                <a class="fab fa-twitter-square" href="https://twitter.com/CodeUniversity" target="_blank"></a>
-            </h1>
         </div>
+    </section>
+
+    <section id="contact">
+        <div class="box box_form kwes-form">
+            <form method="POST" action="https://kwes.io/api/foreign/forms/oPlwrjyPuITfj5R7FHqo">
+                <div class="form_container">
+                    <label class="form-styling form_item" for="name">what is your name?</label>
+                    <input class="form-styling form_item" type="text" name="name" placeholder="this is required but you can lie"required>
+                </div>
+
+                <div class="form_container">
+                    <label class="form-styling form_item" for="shoesize">what's your shoe size?</label>
+                    <input class="form-styling form_item" type="number" name="shoesize" placeholder="only numbers pls" required>
+                </div>
+
+                <div class="form_container">
+                    <label class="form-styling form_item" for="email">your email? </label>
+                    <input class="form-styling form_item" type="email" name="email" placeholder="not required :)">
+                </div>
+                
+                <div class="form_container">
+                    <label class="form-styling form_item" for="msg">anything u wanna share?</label>
+                    <textarea class="form-styling form_item" type="text" name="msg" placeholder="i mean getting empty emails is fun, too, but.. " rows="4"></textarea>
+                </div>
+
+                <div class="form_container">
+                    <div class="form-styling form_item"></div>
+                    <div class="button-container form_item"> <button class="btn btn-full" type="submit">Submit</button></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="box_social">
+            <a class="fab fa-instagram-square" href="http://instagram.com/_u/codeuniversity/" target="_blank"></a>
+            <a class="fab fa-linkedin" href="http://linkedin.com/school/codeuniversity/" target="_blank"></a>
+            <a class="fab fa-twitter-square" href="https://twitter.com/CodeUniversity" target="_blank"></a>
+        </div>
+  
     </section>
 
     <script src="animation.js"></script>

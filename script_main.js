@@ -96,7 +96,7 @@ function startTime() {
   m = checkTime(m);
   s = checkTime(s);
   t = setTimeout('startTime()', 500);
-  currentTimeBox.innerHTML = '<p>' + h + ':' + m + ':' + s + ' ' + d + ' ' + mo + ', ' + day + ' ' + '</p>'
+  currentTimeBox.innerHTML = '<p class="time" style="line-height: 1px">' + h + ':' + m + ':' + s + '</p><br><p class="date" style="font-size: 0.75em">' + d + ' ' + mo + ', ' + day + ' ' + '</p>'
 }
 
 function checkTime(i) {
