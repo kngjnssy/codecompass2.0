@@ -252,7 +252,7 @@ footer div {
 }
 
 .box_form {
-    padding-top: 100px;
+    padding-top: 125px;
     width: 80vw;
     max-width: 700px;
     /* background-color: burlywood; */
@@ -310,7 +310,7 @@ form textarea {
 }
 
 .box_social {
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 2em;
     letter-spacing: 10px;
 }
