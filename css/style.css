@@ -196,6 +196,12 @@ header {
     padding-top: 200px;
 }
 
+.box_social {
+    padding-top: 20vh;
+    font-size: 2em;
+    letter-spacing: 10px;
+}
+
 .box_legend {
     min-width: 50%;
     /* background-color: burlywood; */
