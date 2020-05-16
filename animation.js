@@ -32,6 +32,7 @@ const lightMode = () => {
     var logo = document.querySelector('.logo-light')
     var fullButton = document.querySelector('.btn-full')
     var toggleText = document.querySelector('.toggle-text')
+    var legendBg = document.querySelectorAll('.grid_legend-element')
 
     body.classList.toggle('light-mode');
     demo.classList.toggle('demo-light');
@@ -39,6 +40,10 @@ const lightMode = () => {
     logo.classList.toggle('logo-dark');
     fullButton.classList.toggle('btn-full-light');
     toggleText.classList.toggle('toggle-text-light')
+
+    for (var i = 0; i < legendBg.length; i++) {
+        legendBg[i].classList.toggle('grid_legend-bg-dark')
+    }
 
     for (var i = 0; i < btns.length; i++) {
         btns[i].classList.toggle('btn-dark')
@@ -85,9 +90,10 @@ function hoverHighlightClass(classname, colorover, coloroutBg, coloroutBgTxt="tr
 
 const animations = () => {
     navSlide();
-    hoverHighlightClass("room_type-lu", "violet", "grey");
-    hoverHighlightClass("room_type-dedicated", "violet", "yellowgreen");
-    hoverHighlightClass("room_type-bookable", "violet", "#F8C26E");
+    // decided against it for now:
+    // hoverHighlightClass("room_type-lu", "violet", "grey");
+    // hoverHighlightClass("room_type-dedicated", "violet", "yellowgreen");
+    // hoverHighlightClass("room_type-bookable", "violet", "#F8C26E");
 
 }
 

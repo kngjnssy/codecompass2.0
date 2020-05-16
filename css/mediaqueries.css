@@ -8,10 +8,19 @@
 /* ----------------- TABLET/small screen ABOVE 480px ----------------- */
 
 @media only screen and (max-width: 480px) {
+    body.dark-mode {
+        background-color:  var(--dark-color-mobile);
+    }
+
+    nav {
+        background-color: var(--dark-color-mobile);
+        opacity: 0.8;
+    }
+
     .nav-links li {
         opacity: 0;
         text-align: right;    
-}
+    }
 
     .nav-links {
         position: fixed;   
@@ -46,20 +55,17 @@
         display: none;
     }
 
+    .box_legend {
+        margin-top: 600px;
+    }
+    
     .happening-now {
         display: none;
     }
 
-    .box_legend {
-        display: none;
-    }
-
-
     .toggle-text {
         top: 60px;
     }
-
-
 }
 
 @media only screen and (min-width: 480px) {
@@ -94,6 +100,10 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .box_legend {
+        margin-left: 18%;
+    }
+
    /* .grid_schedule-areas {
         grid-template-rows: auto auto;
         grid-template-columns: 1.2fr 2.7fr 0.8fr;
@@ -107,7 +117,8 @@
         position: fixed;
         top: 60px;
         width: 100%;
-        background-color: rgba(29, 29, 29, 0.671);
+        background-color: var(--dark-color);
+        opacity: 0.8;
         color: grey;
     }
 
