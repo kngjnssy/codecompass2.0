@@ -55,6 +55,11 @@
     }
 
 
+    .toggle-text {
+        top: 60px;
+    }
+
+
 }
 
 @media only screen and (min-width: 480px) {
