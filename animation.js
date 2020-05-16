@@ -30,13 +30,15 @@ const lightMode = () => {
     var btns = document.querySelectorAll('.btn');
     var burgerLines = document.querySelectorAll('.burger-line')
     var logo = document.querySelector('.logo-light')
-
+    var fullButton = document.querySelector('.btn-full')
+    var toggleText = document.querySelector('.toggle-text')
 
     body.classList.toggle('light-mode');
     demo.classList.toggle('demo-light');
     navBg.classList.toggle('nav-light');
     logo.classList.toggle('logo-dark');
-
+    fullButton.classList.toggle('btn-full-light');
+    toggleText.classList.toggle('toggle-text-light')
 
     for (var i = 0; i < btns.length; i++) {
         btns[i].classList.toggle('btn-dark')

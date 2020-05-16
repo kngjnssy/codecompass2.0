@@ -16,7 +16,7 @@
                 <li><a class="btn" href="#intro">home</a></li>
                 <li><a class="btn" href="#floorplan">floorplan</a></li>
                 <li class="nav-calendar"></li> 
-                <li><a class="btn btn-no-border" href="#about">info</a></li>
+                <li><a class="btn btn-no-border" href="#info">info</a></li>
             </ul>
 
             <div class="burger">
@@ -184,14 +184,44 @@
         
     </section>
 
-    <section class="section_about" id="about">
+    <section class="section_info" id="info">
         <!-- <div class="box temp-list"></div> -->
-        <div class="box box_about">
+        <div class="box box_info">
             <p>This is a CODE semester project within the SPP : Solo-Project Project, developed by Kinga Janossy.<br> A working in progress.</p>
             <br>
             <p>Check the display version of the schedule <a href="schedule_display.html" target="_blank">here</a></p>
             <br>
             <p>For further info, please visit <a href="https://github.com/kngjnssy/codecompass2.0/blob/master/README.md" target="_blank">https://github.com/kngjnssy/codecompass2.0</a></p>
+
+            <div class="kwes-form box_form">
+                <form method="POST" action="https://kwes.io/api/foreign/forms/XKYf5EWvYdEIBmzSahJK">
+                    <div class="form_container">
+                        <label class="form-styling form_item" for="name">what is your name?</label>
+                        <input class="form-styling form_item" type="text" name="name" placeholder="this is required but you can lie"required>
+                    </div>
+
+                    <div class="form_container">
+                        <label class="form-styling form_item" for="shoesize">what's your shoe size?</label>
+                        <input class="form-styling form_item" type="number" name="shoesize" placeholder="only numbers pls" required>
+                    </div>
+
+                    <div class="form_container">
+                        <label class="form-styling form_item" for="email">your email? </label>
+                        <input class="form-styling form_item" type="email" name="email" placeholder="not required :)">
+                    </div>
+                    
+                    <div class="form_container">
+                        <label class="form-styling form_item" for="msg">anything u wanna share?</label>
+                        <textarea class="form-styling form_item" type="text" name="msg" placeholder="i mean getting empty emails is fun, too, but.. " rows="10"></textarea>
+                    </div>
+
+                    <div class="form_container">
+                        <div class="form-styling form_item"></div>
+                        <div class="button-container form_item"> <button class="btn btn-full" type="submit">Submit</button></div>
+                    </div>
+
+                </form>
+            </div>
 
             <h1 class="box box_social">
                 <a class="fab fa-instagram-square" href="http://instagram.com/_u/codeuniversity/" target="_blank"></a>
@@ -208,6 +238,8 @@
     onreadystatechange="if (this.readyState === 'complete') this.onload()" crossorigin="">
     </script>
     <script src="https://kit.fontawesome.com/59affaa5ef.js" crossorigin="anonymous"></script>
+    <script src="https://kwes.io/js/kwes.js"></script>
+
 
     
 

@@ -150,6 +150,26 @@
     .type, .status {
         font-size: 0.8em;
     }
+
+    .form_container {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .form-styling {
+        width: 450px;
+        
+    }
+
+    .form-styling-button {
+        width: 70px;
+    }
+
+    .button-container {
+        width: 450px;
+    }
+
+
   }
 /* ----------------- screen ABOVE 1024px ----------------- */
 /* grid-areas for schedule STAY THE SAME as above? */
