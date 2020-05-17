@@ -156,7 +156,7 @@ function eventsToFloorplan() {
             if (!happeningYet) {
               var happeningYet = []
               happeningYet = 1
-              happeningNowList.innerHTML += '<p>happening now: </p>'
+              // happeningNowList.innerHTML += '<p>happening now: </p>'
             }
             if (happeningYet == 1) {
               if (room.includes("PAPER")) {
@@ -178,7 +178,7 @@ function eventsToFloorplan() {
                 roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-big happening-now room_name-light" x="3300" y="740" width="850" height="693"><p>'
                 +'<p class="happening-small"> happening now:</p>'
                 + event.summary + ' </p></foreignObject></switch>'}
-                happeningNowList.innerHTML += '<div>'+ event.summary + ' at ' + event.location + '</div>'
+                // happeningNowList.innerHTML += '<div>'+ event.summary + ' at ' + event.location + '</div>'
               if (room.includes("KITCHEN")) {
                 roomPaths.innerHTML += '<switch><foreignObject class="room_event room_name-light" x="4270" y="2070" width="384" height="93"><p>'
                 + event.summary + ' </p></foreignObject></switch>'}
