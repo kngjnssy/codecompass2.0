@@ -181,6 +181,10 @@ footer {
     z-index: 9999;
 } 
 
+header {
+    top: 0;
+}
+
 footer {
     height: 80px;
     bottom: 0;
@@ -207,7 +211,7 @@ footer {
 } 
 
 .box_schedule-display {
-    margin-top: 100px;
+    margin-top: 50px;
     /* border: blue 3px solid; */
 }
 
