@@ -7,6 +7,15 @@
     <link rel="stylesheet" type="text/css" href="css/mediaqueries.css" />
     <link rel="icon" type="image/png" href="assets/favico.png">
     <title>CODE.compass 2.0</title>
+
+    <!-- <style>
+        @media only screen  and (max-width : 1874px) {
+            .toggle-text {
+                display: none;
+            }
+        }
+    </style> -->
+
 </head>
 
 <body id="body" class="dark-mode" onload="startTime()">
@@ -24,16 +33,52 @@
     <button id="authorize_button" class="btn-hidden">log in</button>
     <button id="signout_button" class="btn-hidden">log out</button>
 
-    <section class="section_schedule display" id="schedule">
-        <div class="box_schedule"></div>
+    <section class="section_schedule" id="schedule">
+        <div class="box_schedule box_schedule-display"></div>
     </section>
 
     <section class="section_floorplan" id="floorplan">
         <div class="box_floorplan">
+            <div class="box_legend grid_legend-container">
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #787779;"></div>
+                    <div class="legend-text room_type-lu">lecture rooms</div>
+                </div>
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #F8C26E;"></div>
+                    <p class="legend-text room_type-bookable">project rooms (bookable)</p>
+                </div>
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #DCFD00;"></div>
+                    <p class="legend-text room_type-dedicated">project rooms (dedicated)</p>
+                </div>
+                <div class="grid_legend-element">                   
+                    <div class="legend_square" style="background-color: #000; border: 0.5px solid white"></div>
+                    <p class="legend-text">community area</p>
+                </div>
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #fff;"></div>
+                    <p class="legend-text">'the real silent' area</p>
+                </div>
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #C6C6C6; border: 1px solid violet"></div>
+                    <p class="legend-text">hybrid rooms</p>
+                </div>
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #FD7869;"></div>
+                    <p class="legend-text">team rooms</p>
+                </div>
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #40BFC3;"></div>
+                    <p class="legend-text">family friendly room</p>
+                </div>
+                <div class="grid_legend-element">
+                    <div class="legend_square" style="background-color: #7765FF;"></div>
+                    <p class="legend-text">exist x project rooms</p>
+                </div>
+            </div>
             <div>
                 <svg version="1.1" class="plan" x="0" y="0" width="9180.4" height="4214.3" viewBox="-326.2 -413.6 9180.4 2914.3" xml:space="preserve">
-                    <!-- <path id="background" fill="#1D1D1D" d="M-326-414h9180v2915H-326z"/> -->
-                    <!-- <path id="background" fill="#FFF" d="M-326-1h9180v2915H-326z"/> -->
                     <g class="rooms background">
                     <path d="M8639.9 1282.3V946.7L8397.8-346l-873.2 163.6 275.5 1464.7h-150v340h-510.8v-115h-676.7v770h1343.9l-.4 108.5h875.8V1282.3z"/>
                     <path fill="none" stroke="#000" stroke-width="50" stroke-linejoin="round" d="M8639.9 1282.3V946.7L8397.8-346l-873.2 163.6 275.5 1464.7h-150v340h-510.8v-115h-676.7v770h1343.9l-.4 108.5h875.8V1282.3z"/></g>
@@ -63,8 +108,6 @@
                     <path class="room jungle" fill="#C6C6C6" d="M4840.2 1851.2h604v510.9h-604z"/>
                     <path class="room hally" fill="#000" stroke="#FFF" stroke-width="6" stroke-miterlimit="10" d="M4797 605.3v1035.1h-336V605.3h336m6-6h-348v1047.1h348V599.3z"/>
                     <path class="toilet" fill="#363636" d="M5740.5 1843.4h704v522.5h-704z"/>
-                    <!-- <path class="rooms outline" fill="#FFF" d="M6462.6 25v2360.8H-147.9V1998l1741.2-603.2 62.9 251.6h44.1l584.3-198 67.2 198h-.1 1751.6V563.9L4820 353.4v1293h904.4V176.8L6462.6 25m6-7.4l-7.2 1.5-738.2 151.8-4.8 1V1640.5H4826v-1295l-7.7 2.3-716.6 210.5-4.3 1.3v1081H2356.2l-65.8-193.9-1.9-5.7-5.7 1.9-583.4 197.7H1661l-61.8-247.1-1.6-6.4-6.2 2.1-1741.2 603.2-4 1.4v398.1h6622.5V17.6h-.1z"/>
-                    <path class="rooms outline" fill="#FFF" d="M8397.8-346l242.1 1292.7v335.6h42v1103.5h-887.3v-108.5H6469.5v-770h669.8v115h510.8v-340h150L7524.6-182.4 8397.8-346m4.8-7l-5.9 1.1-873.2 163.6-5.9 1.1 1.1 5.9 274.2 1457.7h-148.7v340h-498.8v-115h-681.8v782h1325.1v108.5H8688V1276.3h-42V946.1l-.1-.5-242.2-1292.7-1.1-5.9z"/> -->
                     <path class="room exist_4_" transform="rotate(-10.611 8218.937 -157.51)" fill="#7765FF" stroke="#000" stroke-miterlimit="10" d="M8029.2-276.9h379.2v238.2h-379.2z"/>
                     <path class="room exist_3_" transform="rotate(-10.611 8314.706 348.379)" fill="#7765FF" stroke="#000" stroke-miterlimit="10" d="M8125 228.9h379.2v238.2H8125z"/>
                     <path class="room exist_2_" transform="rotate(-10.611 8361.092 601.32)" fill="#7765FF" stroke="#000" stroke-miterlimit="10" d="M8171.4 481.9h379.2v238.2h-379.2z"/>
@@ -141,27 +184,13 @@
             </div>
         </div>
 
-        <div class="box box_legend happening-now-list"></div>
-        <div class="box box_legend">
-            <div class="grid_legend-container">
-                <p class="grid_legend-element room_type-legend room_type-lu">LECTURER ROOMS</p>
-                <p class="grid_legend-element room_type-legend room_type-bookable">PROJECT ROOMS 'bookable'</p>
-                <p class="grid_legend-element room_type-legend room_type-dedicated">PROJECT ROOMS 'dedicated'</p>
-                <p class="grid_legend-element room_type-legend ">COMMUNITY AREA</p>
-                <p class="grid_legend-element room_type-legend ">COMMUNITY 'THE REAL SILENT' AREA</p>
-                <p class="grid_legend-element room_type-legend">HYBRID ROOM</p>
-                <p class="grid_legend-element room_type-legend">TEAM ROOMS</p>
-                <p class="grid_legend-element room_type-legend">FAMILY FRIENDLY ROOM 'non bookable'</p>
-                <p class="grid_legend-element room_type-legend">EXIST x PART TIME PROJECT ROOMS</p>
-            </div>
-        </div>
     </section>
 
-    <div class="toggle-text">
+    <!-- <div class="toggle-text">
         <input onclick='lightMode()' type="checkbox" id="switch" />
        <label for="switch">Toggle</label>
        <p> light / dark mode! </p>
-    </div>
+    </div> -->
 
     <footer>
         <div class="box_footer">
@@ -180,7 +209,6 @@
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()" crossorigin="">
     </script>
-    
 
 </body>
 </html>

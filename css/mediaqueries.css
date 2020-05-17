@@ -1,15 +1,13 @@
-/* ----------------- style.css is optimised for mobile first ----------------- */
-/* burger menu */
-/* 1 columns for legend */
-/* stacked grid for schedule */
-
-/* ------> stlyes for larger screens ------>  */
-
-/* ----------------- TABLET/small screen ABOVE 480px ----------------- */
-
+/* ----------------- style.css is (mostly) optimised for mobile first ----------------- */
+/* ------> except ------> */
 @media only screen and (max-width: 480px) {
     body.dark-mode {
         background-color:  var(--dark-color-mobile);
+    }
+
+    body.light-mode {
+        background-color: var(--light-color);
+        color: var(--dark-color-text);
     }
 
     nav {
@@ -68,7 +66,11 @@
     }
 }
 
+/* ------> stlyes for larger screens ------>  */
+
+/* ----------------- TABLET/small screen ----------------- */
 @media only screen and (min-width: 480px) {
+
     .section_floorplan {
         /* border: 5px solid magenta; */
         height: 100vh;
@@ -104,15 +106,6 @@
         margin-left: 18%;
     }
 
-   /* .grid_schedule-areas {
-        grid-template-rows: auto auto;
-        grid-template-columns: 1.2fr 2.7fr 0.8fr;
-        grid-gap: 0;
-        grid-template-areas:
-            "start-time type location"
-            "date-and-day title status"
-    } */
-
     .demo-sign {
         position: fixed;
         top: 60px;
@@ -130,15 +123,15 @@
     .happening-now-list {
         display: none;
     }
-
 }
 
 @media only screen and (max-width: 768px) {
-    .btn-full {
+    .btn-full-submit {
         margin-right: 0;
     }
 }
 
+/* ----------------- bigger screens ----------------- */
 @media only screen and (min-width: 768px) {
 
     .box_schedule {
@@ -169,7 +162,8 @@
         align-self: start;
       }
 
-    .type, .status {
+    .type, 
+    .status {
         font-size: 0.8em;
     }
 
@@ -180,7 +174,6 @@
     
     .form-styling {
         width: 450px;
-        
     }
 
     .form-styling-button {
@@ -190,12 +183,9 @@
     .button-container {
         width: 450px;
     }
-
-
 }
-/* ----------------- screen ABOVE 1024px ----------------- */
-/* grid-areas for schedule STAY THE SAME as above? */
 
+/* ----------------- screen ABOVE 1024px ----------------- */
 @media only screen and (min-width: 1024px) {
 
     /* 3 columns for legend */
@@ -215,7 +205,6 @@
             "date-and-day type space status"
             "start-time title space location"
     } 
-
 
     .time,
     .title,
@@ -273,12 +262,11 @@
     .status {
         justify-self: center;
     }
-
-
 }
 
-/* for the big screen  */
+/* for the big screen/display  */
 @media only screen  and (min-width : 1874px) {
+
     .box_schedule {
         max-width: 1700px;
     }

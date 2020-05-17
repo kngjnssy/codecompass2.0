@@ -27,31 +27,50 @@ const lightMode = () => {
     var body = document.body;
     var demo = document.querySelector('.demo-sign');
     var navBg = document.querySelector('nav');
-    var btns = document.querySelectorAll('.btn');
-    var burgerLines = document.querySelectorAll('.burger-line')
-    var logo = document.querySelector('.logo-light')
-    var fullButton = document.querySelector('.btn-full')
     var toggleText = document.querySelector('.toggle-text')
+
+    var logos = document.querySelectorAll('.logo-light')
+    var links = document.querySelectorAll('.link-simple')
+    var btns = document.querySelectorAll('.btn');
+    var fullButtons = document.querySelectorAll('.btn-full')
+    var borderButtons =document.querySelectorAll('.btn-border')
+    var burgerLines = document.querySelectorAll('.burger-line')
+
     var legendBg = document.querySelectorAll('.grid_legend-element')
 
     body.classList.toggle('light-mode');
     demo.classList.toggle('demo-light');
     navBg.classList.toggle('nav-light');
-    logo.classList.toggle('logo-dark');
-    fullButton.classList.toggle('btn-full-light');
     toggleText.classList.toggle('toggle-text-light')
 
-    for (var i = 0; i < legendBg.length; i++) {
-        legendBg[i].classList.toggle('grid_legend-bg-dark')
+    for (var i = 0; i < logos.length; i++) {
+        logos[i].classList.toggle('logo-dark');
+    }
+
+    for (var i = 0; i < links.length; i++) {
+        links[i].classList.toggle('link-dark')
     }
 
     for (var i = 0; i < btns.length; i++) {
         btns[i].classList.toggle('btn-dark')
     }
 
+    for (var i = 0; i < borderButtons.length; i++) {
+        borderButtons[i].classList.toggle('btn-border-dark')
+    }
+
+    for (var i = 0; i < fullButtons.length; i++) {
+        fullButtons[i].classList.toggle('btn-full-light');
+    }
+
     for (var i = 0; i < burgerLines.length; i++) {
         burgerLines[i].classList.toggle('burger-line-dark')
     }
+
+    for (var i = 0; i < legendBg.length; i++) {
+        legendBg[i].classList.toggle('grid_legend-bg-dark')
+    }
+
 
 }
 
