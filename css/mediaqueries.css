@@ -1,6 +1,10 @@
 /* ----------------- style.css is (mostly) optimised for mobile first ----------------- */
 /* ------> except ------> */
 @media only screen and (max-width: 480px) {
+   /* for a lighter dark background on mobile */
+   /* adjusting the burger menu and mobile navigation */
+   /* aligning the toggle element */
+
     body.dark-mode {
         background-color:  var(--dark-color-mobile);
     }
@@ -65,11 +69,12 @@
         top: 60px;
     }
 }
-
 /* ------> stlyes for larger screens ------>  */
 
 /* ----------------- TABLET/small screen ----------------- */
 @media only screen and (min-width: 480px) {
+    /* to turn back the floorplan SVG */
+    /* adjusting the grids */
 
     .section_floorplan {
         /* border: 5px solid magenta; */
@@ -133,6 +138,8 @@
 
 /* ----------------- bigger screens ----------------- */
 @media only screen and (min-width: 768px) {
+    /* adjusting the grid for the schedule */
+    /* adjusting the form */
 
     .box_schedule {
         width: 90%;
@@ -187,6 +194,9 @@
 
 /* ----------------- screen ABOVE 1024px ----------------- */
 @media only screen and (min-width: 1024px) {
+    /* adjusting the grid for the legend */
+    /* adjusting the grid for the schedule */
+    /* changing font sizes for the schedule*/
 
     /* 3 columns for legend */
     .grid_legend-container {
@@ -233,6 +243,8 @@
 }
 
 @media only screen  and (min-width : 1224px) {
+    /* adjusting the grid for the schedule */
+    /* changing font sizes for the schedule*/
     .box_schedule {
         max-width: 1150px;
     }
@@ -266,7 +278,11 @@
 
 /* for the big screen/display  */
 @media only screen  and (min-width : 1874px) {
-
+    /* my monitor is 1880px, so I could test: */
+    /* for the big screen/display/digital board */
+    /* adjusting the grid for the schedule */
+    /* changing font sizes for the schedule */
+    /* aligning the toggle element */
     .box_schedule {
         max-width: 1700px;
     }

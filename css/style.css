@@ -124,9 +124,14 @@ section { height: 100vh; }
     /* border:3px solid lawngreen; */
 }
 
+.box_home p {
+    margin-top: 30px;
+    text-align: left;
+}
+
 .box_logo,
 .box_info {
-    padding-top: 200px;    
+    padding-top: 150px;    
 }
 
 .box_news,
