@@ -68,6 +68,10 @@
     .toggle-text {
         top: 60px;
     }
+    .box_logo,
+    .box_info {
+        padding-top: 100px;    
+    }
 }
 /* ------> stlyes for larger screens ------>  */
 
