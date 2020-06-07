@@ -1,4 +1,4 @@
-*This is a CODE semester project within SPP : Solo-Project Project, developed for the CODE campus by Kinga Janossy. Ideas and design clues given by CODE team. A working in progress. Initially submitted for SE19 Web Technologies Basics module on 07.05.2020.*
+*This is a CODE semester project within SPP : Solo-Project Project, developed for the CODE campus by Kinga Janossy. Ideas and design clues given by CODE team. A work in progress. Initially submitted for SE19 Web Technologies Basics module on 07.05.2020.*
 
 ### at a glance
 
