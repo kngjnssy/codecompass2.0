@@ -107,6 +107,7 @@ function checkTime(i) {
 }
 
 // --------------------- render events to the floorplan  ----------------- //
+// axios post request for the lp api or node fetch
 
 function eventsToFloorplan() {
   gapi.client.calendar.events.list({

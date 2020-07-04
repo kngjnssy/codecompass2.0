@@ -1,0 +1,25 @@
+{
+  "name": "codecompass",
+  "version": "1.0.0",
+  "description": "*This is a CODE semester project within SPP : Solo-Project Project, developed for the CODE campus by Kinga Janossy. Ideas and design clues given by CODE team. A work in progress. Initially submitted for SE19 Web Technologies Basics module on 07.05.2020.*",
+  "main": "script_lp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kngjnssy/codecompass2.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kngjnssy/codecompass2.0/issues"
+  },
+  "homepage": "https://github.com/kngjnssy/codecompass2.0#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "esm": "^3.2.25",
+    "graphql-request": "^2.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}
