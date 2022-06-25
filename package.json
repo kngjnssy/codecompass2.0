@@ -20,6 +20,6 @@
     "axios": "^0.19.2",
     "esm": "^3.2.25",
     "graphql-request": "^2.0.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.7"
   }
 }
