@@ -41,8 +41,8 @@ For the CODE logo, an SVG element has been animated with simple CSS keyframe tra
 
 ## Hosting and maintenance
 
-The site is hosted on a VPS (via Hetzner, Ubuntu 18.04 distribution), on its own server block set up with Nginx. The server’s firewall is configured via UFW and it is accessed as a superuser from the terminal with a SSH key from a local machine. Updates,  commits of the projects are pushed from a local machine with the help of a post-receive git hook. The domain tremual.de is registered with the domain name registrar namecheap.com and the subdomain compass.tremula.de is set up as an ‘A Record’. The site has acquired a free SSL certificate using Let's Encrypt - which is renewed with crontab.  
+~~The site is hosted on a VPS (via Hetzner, Ubuntu 18.04 distribution), on its own server block set up with Nginx. The server’s firewall is configured via UFW and it is accessed as a superuser from the terminal with a SSH key from a local machine. Updates,  commits of the projects are pushed from a local machine with the help of a post-receive git hook. The domain tremual.de is registered with the domain name registrar namecheap.com and the subdomain compass.tremula.de is set up as an ‘A Record’. The site has acquired a free SSL certificate using Let's Encrypt - which is renewed with crontab.~~
 
-The site can be visited [here](https://compass.tremula.de/).
+The site can be visited [via Github Pages]( https://kngjnssy.github.io/codecompass2.0/).
 
 *The complete content of the site can be accessed after logging in with a code.berlin account. For the sake of displaying a variety of sample events, the current time of the page is set to a specific date.*
