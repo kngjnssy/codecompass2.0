@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/kngjnssy/codecompass2.0#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^1.6.5",
     "esm": "^3.2.25",
     "graphql-request": "^2.0.0",
     "node-fetch": "^2.6.0"
